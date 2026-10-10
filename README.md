@@ -202,6 +202,7 @@ As much as I would love to say I did this alone, I did not. These are the amazin
 - Kaizuchaneru: While not directly invovled in the deveopment, they tested most cvars.
 - Tamara Mochaccina: Contributed vindicta scope fix and the fog fix.
 - RoseyLemonz: Removed duplicate cvars
+- Laund: Very very helpful, super duper nice, and helped me with making stuff to improve the workflow.
 
 ## Donors
 

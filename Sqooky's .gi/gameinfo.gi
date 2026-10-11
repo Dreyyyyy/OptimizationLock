@@ -13,7 +13,7 @@
 //         /!#%|'-_- '\%k*|
 //     o   |*@/        \_/
 //         \)&|
-// OptimizationLock Ver. 3.5 by Sqooky with help from others <3
+// OptimizationLock Ver. 3.5.1 by Sqooky with help from others <3
 
 // As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more
 //  Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
@@ -754,7 +754,7 @@ GameInfo
         //      If you would like to donate as a means of showing thanks I have a kofi.     \\
         //      https://ko-fi.com/sqooky                                                    \\
 
-        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 3.5 -------- \\
+        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 3.5.1 -------- \\
         // The github is here https://github.com/Sqooky/OptimizationLock  \\
         // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
         // The gamebanana:https://gamebanana.com/mods/656341 (it's usually behind, please check the github) \\
@@ -903,20 +903,20 @@ GameInfo
         sparseshadowtree_enable_rendering        "0"    // Enables Sparse Shadow Tree, rendering static geometry into shadow cascades.      [def: "0"]
 
         // ================ Lighting ================
-        cl_retire_low_priority_lights               "1" // Replaces/drops low-priority dynamic lights when higher-priority lights are present (helps cap dlight clutter/cost). [def: "0"]
-        mat_async_shader_load                       "1" // I have no reason to believe the name doesn't match the function  [def: "0"]
-        mat_max_lighting_complexity                 "0" // Doesn't seem to do anything but throwing it in for posterity.    [def: "8"]
-        r_citadel_ssao_quality                      "0" // SSAO quality level (0 = lowest/off-ish).                         [def: "3"]
-        r_citadel_ssao_thin_occluder_compensation   "0" // Disables special handling for thin occluders in SSAO (cheaper).  [def: "0.5"]
-        r_citadel_sun_shadow_slope_scale_depth_bias "0" // \\                                                               [def: "3.54"]
-        r_distancefield_enable                      "1" // Disables/ Enables distance-field system (used by some lighting/shadowing/occlusion features). [def: "1"]
-        r_lightmap_bicubic_filtering                "1" // Enables bicubic filtering on lightmaps.                          [def: "1"]
-        r_lightmap_size                             "1" // "2048" // Maximum lightmap resolution..                                    [def: "65536"]
-        r_lightmap_size_directional_irradiance      "0" // Sets directional irradiance lightmap data size (lower = less detail) (-1 = uses value of r_lightmap_size ). [def: "-1"]
-        r_multiscattering                           "1" // Enables multi-scattering lighting approximation.                 [def: "1"]
-        r_rendersun                                 "0" // Disables sun lighting.                                           [def: "1"]
-        r_ssao                                      "0" // Disables screen-space ambient occlusion.                         [def: "1"]
-        r_ssao_strength                             "0" // AO strength multiplier (0 = no AO contribution).                 [def: "1.2"]
+        cl_retire_low_priority_lights               "1"    // Replaces/drops low-priority dynamic lights when higher-priority lights are present (helps cap dlight clutter/cost). [def: "0"]
+        mat_async_shader_load                       "1"    // I have no reason to believe the name doesn't match the function  [def: "0"]
+        mat_max_lighting_complexity                 "0"    // Doesn't seem to do anything but throwing it in for posterity.    [def: "8"]
+        r_citadel_ssao_quality                      "0"    // SSAO quality level (0 = lowest/off-ish).                         [def: "3"]
+        r_citadel_ssao_thin_occluder_compensation   "0"    // Disables special handling for thin occluders in SSAO (cheaper).  [def: "0.5"]
+        r_citadel_sun_shadow_slope_scale_depth_bias "0"    // \\                                                               [def: "3.54"]
+        r_distancefield_enable                      "1"    // Disables/ Enables distance-field system (used by some lighting/shadowing/occlusion features). [def: "1"]
+        r_lightmap_bicubic_filtering                "1"    // Enables bicubic filtering on lightmaps.                          [def: "1"]
+        r_lightmap_size                             "2048" // Maximum lightmap resolution..                                    [def: "65536"]
+        r_lightmap_size_directional_irradiance      "0"    // Sets directional irradiance lightmap data size (lower = less detail) (-1 = uses value of r_lightmap_size ). [def: "-1"]
+        r_multiscattering                           "1"    // Enables multi-scattering lighting approximation.                 [def: "1"]
+        r_rendersun                                 "0"    // Disables sun lighting.                                           [def: "1"]
+        r_ssao                                      "0"    // Disables screen-space ambient occlusion.                         [def: "1"]
+        r_ssao_strength                             "0"    // AO strength multiplier (0 = no AO contribution).                 [def: "1.2"]
 
         // ================ Ragdolls ================
         cl_disable_ragdolls "0" // Keep set to 0 - enabling this (disabling ragdolls) can cause issue with doorman's ultimate. [def: "0"]
@@ -1185,7 +1185,7 @@ GameInfo
         fog_enableskybox         "false" // I doubt the fog commands actually are modifiable but I am maintaining their inclusion for posterity
         volume_fog_enable_jitter "false" // Don't think I can
 
-        // --------------------------------- END OF CONFIG OptimizationLock -- ver. 3.5 ------------------------------- \\
+        // --------------------------------- END OF CONFIG OptimizationLock -- ver. 3.5.1 ------------------------------- \\
 
 
         // ====================== SV commands we cannot change but I want to maintain documentation for ======================

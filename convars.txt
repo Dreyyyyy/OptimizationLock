@@ -1163,9 +1163,6 @@ citadel_auto_highlight_seconds_after 8 (clientdll release)
 citadel_auto_highlight_seconds_before 20 (clientdll release)
 	How many seconds before the highlight event to show when viewing highlights.
 
-citadel_auto_ping_window 0.35 (developmentonly clientdll)
-	If the ping button is opened and closed within this time, and no option is selected, chose this.
-
 citadel_auto_queue_build false (clientdll archive userinfo)
 	Automatically queue the selected build at game start
 
@@ -1871,8 +1868,8 @@ citadel_chat_fade_time_extension 7 (developmentonly clientdll defensive)
 citadel_chat_typing_indicator_fade_time 5 (developmentonly clientdll defensive)
 	<no description>
 
-citadel_chat_wheel_fade_out_duration 0.35 (developmentonly clientdll)
-	Chat wheel must be propped open so that it can visible fade away while showing the user their selection. This controls that maximum time.
+citadel_check_walk_on_skyclip true (gamedll clientdll replicated cheat)
+	<no description>
 
 citadel_cinematic_intro_duration_npc 7.5 (gamedll cheat)
 	How long is the cinematic intro applied to npcs (shrine/patron)
@@ -1882,9 +1879,6 @@ citadel_cinematic_intro_duration_player 9.5 (gamedll cheat)
 
 citadel_cinematic_intro_enabled 0 (gamedll cheat)
 	-1 = force disabled, 0 = default, 1 = force enabled
-
-citadel_clamp_mouse_when_using_ping_wheel true (developmentonly clientdll)
-	<no description>
 
 citadel_client_mm_ignore_engine_version false (developmentonly clientdll)
 	Ignore the engine version number for matchmaking. Useful for testing locally in release.
@@ -1994,7 +1988,7 @@ citadel_corrupted_item_bonus_variance_better 15 (gamedll clientdll replicated ch
 citadel_corrupted_item_bonus_variance_worse 15 (gamedll clientdll replicated cheat)
 	Max percent a corrupted item's stat bonuses can roll below their authored values each match.
 
-citadel_corrupted_item_shop_enabled true (gamedll clientdll replicated cheat)
+citadel_corrupted_item_shop_enabled false (gamedll clientdll replicated cheat)
 	<no description>
 
 citadel_corrupted_item_shop_num_items 1 (gamedll clientdll replicated cheat)
@@ -2102,6 +2096,9 @@ citadel_crosshair_outline_color_r 0 (developmentonly clientdll per_user defensiv
 citadel_crosshair_pip_gap 4 (developmentonly clientdll per_user defensive)
 	<no description>
 
+citadel_crosshair_pip_gap_collapse false (developmentonly clientdll per_user defensive)
+	<no description>
+
 citadel_crosshair_pip_gap_static false (developmentonly clientdll per_user defensive)
 	<no description>
 
@@ -2146,12 +2143,6 @@ citadel_damage_radar_enemy_display_time 2 (developmentonly clientdll gameinfo_ca
 
 citadel_damage_report_enable true (developmentonly clientdll)
 	If enabled, show damage report
-
-citadel_damage_report_ignore_neutral_subclass 1 (developmentonly clientdll)
-	Treat all neutral damage as one attacker class bucket
-
-citadel_damage_report_ignore_trooper_subclass 0 (developmentonly clientdll)
-	Treat all trooper damage as one attacker class bucket
 
 citadel_damage_report_show_adjusted_percent_min 3 (developmentonly clientdll)
 	Hide buffed/resisted damage if it's below this percentage of change
@@ -2261,7 +2252,7 @@ citadel_damage_text_x_offset_far 0 (developmentonly clientdll)
 citadel_damage_text_x_offset_near 0 (developmentonly clientdll)
 	How much to offset damage numbers left and right when near the camera
 
-citadel_dead_zone_radius 0.075 (developmentonly clientdll defensive)
+citadel_deadpack_instant_shot false (gamedll clientdll replicated cheat release)
 	<no description>
 
 citadel_death_linger_time 3 (developmentonly gamedll)
@@ -2435,9 +2426,6 @@ citadel_disable_quick_response true (developmentonly clientdll)
 citadel_display_new_player_recommendations true (clientdll release)
 	Do we want to show the decorations for new player friendly heroes?
 
-citadel_distance_mouse_move_for_minimap_drawing 15 (clientdll release)
-	<no description>
-
 citadel_doorway_debug_draw 0 (gamedll clientdll replicated cheat)
 	<no description>
 
@@ -2489,12 +2477,6 @@ citadel_dump_keybindings false (developmentonly clientdll defensive)
 citadel_enable_chat_rate_limiting true (developmentonly gamedll)
 	<no description>
 
-citadel_enable_double_ping true (developmentonly clientdll)
-	Turns off the ability to have aggressive and passive pings.
-
-citadel_enable_new_ping_particle false (developmentonly clientdll)
-	Convar to test new ping particle
-
 citadel_enable_parties true (developmentonly clientdll defensive)
 	Enable client side party UI
 
@@ -2519,6 +2501,15 @@ citadel_enemy_consume_stamina_notification_range_close 10 (developmentonly gamed
 citadel_enemy_consume_stamina_notification_range_far 100 (developmentonly gamedll clientdll replicated defensive)
 	If an enemy is this far, then we never send a stamina consume usermessage to enemies.
 
+citadel_enemy_damage_delta_color_b 91 (min: 0, max: 255, clientdll archive per_user)
+	Blue channel of the color used for the part of an enemy health bar just lost to damage.
+
+citadel_enemy_damage_delta_color_g 229 (min: 0, max: 255, clientdll archive per_user)
+	Green channel of the color used for the part of an enemy health bar just lost to damage.
+
+citadel_enemy_damage_delta_color_r 255 (min: 0, max: 255, clientdll archive per_user)
+	Red channel of the color used for the part of an enemy health bar just lost to damage.
+
 citadel_enemy_ui_color_b 50 (min: 0, max: 255, clientdll archive per_user)
 	Blue channel of the color used for enemy health bars and other enemy indicators in the UI.
 
@@ -2530,6 +2521,15 @@ citadel_enemy_ui_color_r 215 (min: 0, max: 255, clientdll archive per_user)
 
 citadel_enemy_visible_upon_reveal_duration 0.7 (developmentonly clientdll gameinfo_cannot_override)
 	How long an enemy appears through walls (outline or ui icon) after taking damage. Must also have fog of war visibility.
+
+citadel_enemy_zipline_color_b 38 (min: 0, max: 255, clientdll archive per_user)
+	Blue channel of the color used for enemy ziplines and enemy objectives on the minimap.
+
+citadel_enemy_zipline_color_g 55 (min: 0, max: 255, clientdll archive per_user)
+	Green channel of the color used for enemy ziplines and enemy objectives on the minimap.
+
+citadel_enemy_zipline_color_r 140 (min: 0, max: 255, clientdll archive per_user)
+	Red channel of the color used for enemy ziplines and enemy objectives on the minimap.
 
 citadel_english_hero_names false (clientdll archive per_user)
 	<no description>
@@ -2846,6 +2846,9 @@ citadel_hero_roster_random false (clientdll archive per_user release)
 citadel_hero_settings_cloud_disable false (developmentonly clientdll defensive)
 	<no description>
 
+citadel_hero_specific_settings_enabled false (clientdll archive per_user)
+	Use hero-specific settings and keybinds
+
 citadel_hero_testing_dummy_bullet_resist 0 (gamedll clientdll replicated cheat)
 	Bonus bullet resist % given to Target Dummies in Hero Testing
 
@@ -3002,6 +3005,9 @@ citadel_hud_announcement_force_single_levelup false (developmentonly clientdll d
 citadel_hud_build_category_max_height 600 (developmentonly clientdll)
 	<no description>
 
+citadel_hud_build_category_max_width 5000 (developmentonly clientdll)
+	<no description>
+
 citadel_hud_build_category_min_height 125 (developmentonly clientdll)
 	<no description>
 
@@ -3012,9 +3018,6 @@ citadel_hud_build_compact_category_extra_height 0 (developmentonly clientdll)
 	<no description>
 
 citadel_hud_build_compact_category_extra_width 0 (developmentonly clientdll)
-	<no description>
-
-citadel_hud_chat_wheel true (developmentonly clientdll defensive)
 	<no description>
 
 citadel_hud_damage_counter_duration 2 (developmentonly clientdll defensive)
@@ -3065,6 +3068,9 @@ citadel_hud_top_bar_enable_dynamic_player_position true (developmentonly clientd
 citadel_hud_unit_indicators_v2_enable true (developmentonly clientdll)
 	<no description>
 
+citadel_hud_unit_indicators_v2_show_distance true (clientdll archive userinfo)
+	<no description>
+
 citadel_hud_visible true (clientdll release)
 	Turns on/off rendering the HUD
 
@@ -3097,6 +3103,9 @@ citadel_inactive_time_grace_period 30 (developmentonly gamedll defensive)
 
 citadel_initial_wall_jump_stamina_cost 0 (developmentonly gamedll clientdll replicated defensive)
 	How much stamina is required, and costs, to perform your first wall jump.
+
+citadel_instant_ping_cancel_time 0.5 (developmentonly clientdll)
+	Holding the instant ping key longer than this cancels the ping.
 
 citadel_item_draft_enabled 1 (gamedll clientdll replicated release)
 	Use item drafting?  1=only street brawl 2=always
@@ -3404,21 +3413,6 @@ citadel_minimap_teleporter_nearby_dist 1600 (developmentonly clientdll defensive
 citadel_minimap_trooper_size 3 (clientdll release)
 	<no description>
 
-citadel_minimap_unit_click_radius 200 (clientdll release)
-	<no description>
-
-citadel_minimap_use_effects false (developmentonly clientdll)
-	<no description>
-
-citadel_minimap_zip_line_hover_radius 16 (clientdll release)
-	Extra pixels either side of a minimap zipline that still count as hovering it
-
-citadel_minimap_zip_line_hover_thickness_scale 2 (clientdll release)
-	How much thicker a hovered minimap zipline lane draws
-
-citadel_minimap_zip_line_thickness 2 (clientdll release)
-	<no description>
-
 citadel_minimum_fire_rate -50 (gamedll clientdll replicated cheat)
 	Minimum value possible for fire rate
 
@@ -3506,6 +3500,9 @@ citadel_neutral_ability_dev_test -1 (developmentonly gamedll)
 citadel_neutral_aggro_time 5 (developmentonly gamedll)
 	<no description>
 
+citadel_neutral_ai_pathfinder_max_path_detour 1500 (gamedll cheat)
+	How far a path may detour from the direct route. Negative means no limit.
+
 citadel_neutral_camp_spawn_per_tick_limit 1 (developmentonly gamedll)
 	Spawn this many neutral camps per tick (this is a limit, so if it's 1, we'll only spawn one per tick (perf)). Set this value to something large to effectively remove the limit. 0 or negative will prevent spawning.
 
@@ -3566,20 +3563,17 @@ citadel_new_abandon_rules_early_time 300 (developmentonly gamedll defensive)
 citadel_new_mini_radial_delay_time 0.125 (developmentonly clientdll)
 	<no description>
 
-citadel_new_ping_coyote_time 0.125 (developmentonly clientdll)
-	<no description>
-
 citadel_new_ping_fow_window 2 (developmentonly clientdll)
 	How long after an enemy drops off shared team vision they can still be pinged, in seconds.
 
 citadel_new_ping_free_cursor_world_trace false (developmentonly clientdll)
 	Allow free cursor pings to trace through the HUD into the world (entities and ziplines).
 
-citadel_new_ping_minimap_left_click true (developmentonly clientdll)
-	With citadel_new_ping_system on, left clicking anywhere on the minimap opens the ping radial, same as the ping keybind. Never overrides a minimap targeting ability like Mirage's teleport.
+citadel_new_ping_hitbox_self_test false (developmentonly clientdll)
+	When tracing in free cursor mode, turn on a more expensive trace vs the local player model (nearer objects will undergo more scrutiny)
 
-citadel_new_ping_system 1 (developmentonly clientdll archive)
-	Allow Minimap Radial to appear. 0: Off. 1: On. 2: Spew
+citadel_new_ping_minimap_left_click true (developmentonly clientdll)
+	Left clicking anywhere on the minimap opens the ping radial, same as the ping keybind. Never overrides a minimap targeting ability like Mirage's teleport.
 
 citadel_new_ping_system_fixed_slot_icons true (developmentonly clientdll defensive)
 	Draw the icon each slot pins in scripts/ping_targets.vdata on the radials whose layout is fixed, so the art stops moving when an override fires. A minimap sourced radial pins the generic_entity row's four, since one compass serves everything on the map; a radial from hud chrome pins its own row's, so a friendly and an enemy portrait stay distinct. 0 restores the per ping icons.
@@ -3653,8 +3647,8 @@ citadel_num_matches_in_profile_history 16 (developmentonly clientdll)
 citadel_num_team_pauses_allowed 3 (developmentonly gamedll defensive)
 	Number of times a team is allowed to pause the game. 0 Means unbounded
 
-citadel_observer_max_dolly_level 8 (developmentonly clientdll defensive)
-	<no description>
+citadel_observer_max_dolly_level 16 (clientdll archive)
+	Number of increments along the zoom dolly
 
 citadel_observer_roaming_speed 600 (clientdll archive)
 	<no description>
@@ -3694,9 +3688,6 @@ citadel_orb_required_bullets_to_claim_override 0 (developmentonly gamedll client
 
 citadel_orb_velocity_decay_in_lagcomp 0.85 (developmentonly gamedll)
 	Decay velocity to 0 by this amount during lag comp window
-
-citadel_outer_radius_scaler 0.2545 (developmentonly clientdll defensive)
-	<no description>
 
 citadel_party_invite_in_game true (clientdll release)
 	When set, only users in game can be invited
@@ -3755,8 +3746,8 @@ citadel_pending_replay_num_retries 30 (developmentonly clientdll defensive)
 citadel_pending_replay_retry_seconds 300 (developmentonly clientdll defensive)
 	<no description>
 
-citadel_per_unit_hotkeys_checked false (clientdll archive per_user)
-	<no description>
+citadel_per_unit_hotkeys_checked false (clientdll hidden per_user release)
+	Old name of citadel_hero_specific_settings_enabled
 
 citadel_per_weapon_per_surface_impact_effects true (developmentonly gamedll clientdll replicated defensive)
 	<no description>
@@ -3769,6 +3760,9 @@ citadel_perf_long_frame_time_threshold_ms 17.5 (developmentonly gamedll)
 
 citadel_perf_short_idle_time_threshold_ms 3 (developmentonly gamedll)
 	The amount of time in milliseconds where if we have less than this in idle time, count it as a low idle frame
+
+citadel_photomode_enabled false (clientdll release)
+	Hides Healthbars, Local Hero, HUD
 
 citadel_pickup_spawner_enabled true (gamedll replicated cheat release)
 	Set to false to stop citadel_pickup_spawner pickups (healing snacks) from spawning and respawning
@@ -3791,8 +3785,14 @@ citadel_ping_almost_respawned_seconds 10 (gamedll cheat)
 citadel_ping_below_us_z 500 (gamedll cheat)
 	If the pinged hero is below us by this many units, use the "below_us" voice variant
 
-citadel_ping_consecutive_window 0.25 (developmentonly clientdll)
+citadel_ping_can_heal_range 2500 (gamedll cheat)
+	Pinging a low teammate offers a heal only if they are within this many units and in line of sight. Matches citadel_fow_player_range.
+
+citadel_ping_consecutive_window 0.35 (developmentonly clientdll)
 	Seconds between taps on one subject for them to chain into a double (triple...) ping.
+
+citadel_ping_debug_spew false (developmentonly clientdll)
+	Log ping subject, radial and send decisions, and draw ping debug overlays.
 
 citadel_ping_enemy_count_radius 1500 (clientdll cheat)
 	How close another visible enemy has to be to the pinged position to count toward the group callout.
@@ -3818,8 +3818,8 @@ citadel_ping_radial_early_open_deflection_deg 10 (developmentonly clientdll)
 citadel_ping_spam_hides_marker false (gamedll cheat)
 	Restores the old behaviour where repeat pings hid the marker as well as the sound. The marker is positional information the team needs; the noise is the spam.
 
-citadel_ping_wheel_activation_radius 0.6 (developmentonly clientdll)
-	Increase this to change how much you have to move your mouse to make the mousewheel visible.
+citadel_ping_teammate_alone_radius 1500 (gamedll cheat)
+	A pinged teammate with no other living ally (the pinger included) within this many units is told to be careful.
 
 citadel_play_page_fake_data false (developmentonly clientdll)
 	<no description>
@@ -3847,6 +3847,9 @@ citadel_player_attack_enemy_npc_fow_reveal_duration 2 (gamedll cheat)
 
 citadel_player_attack_enemy_player_fow_reveal_duration 1 (gamedll cheat)
 	How long a player is visible to enemy FOW after attacking an enemy player
+
+citadel_player_cam_toggle false (clientdll archive per_user)
+	Player Cam buttons toggle the teammate view instead of showing it while held
 
 citadel_player_client_reprediction_disabled false (clientdll cheat release)
 	<no description>
@@ -3940,6 +3943,9 @@ citadel_player_ground_dash_min_percent 0.5 (gamedll clientdll replicated cheat)
 
 citadel_player_level_hiding_extra_duration 0.45 (developmentonly clientdll defensive)
 	<no description>
+
+citadel_player_model_force_highest_lod true (clientdll release)
+	Forces the local player pawn to render using the highest LOD level.
 
 citadel_player_move_speed_min 80 (gamedll clientdll replicated cheat)
 	Min walk speed
@@ -4445,9 +4451,6 @@ citadel_recent_comms_throttling_penalty 10 (gamedll replicated release)
 citadel_reduce_camera_shake false (clientdll archive per_user)
 	Turns off screen shake.
 
-citadel_region_override -1 (clientdll release)
-	Override the region of the client
-
 citadel_replay_manager_download_chunk_size 1048576 (clientdll archive)
 	<no description>
 
@@ -4466,7 +4469,7 @@ citadel_report_card_dismissal_timeout 40 (developmentonly gamedll)
 citadel_report_card_tasks_complete false (developmentonly gamedll)
 	<no description>
 
-citadel_reporter_updates_poll_interval_games 15 (clientdll archive release)
+citadel_reporter_updates_poll_interval_games 5 (clientdll release)
 	<no description>
 
 citadel_require_server_bullet_impacts_on_important_hits false (developmentonly gamedll clientdll replicated defensive)
@@ -4568,6 +4571,9 @@ citadel_settings_active_settings_subsection_read_only -1 (clientdll hidden archi
 citadel_settings_always_show_all_settings true (clientdll archive per_user)
 	Keep the settings shared by all heroes visible while browsing a specific hero's settings
 
+citadel_settings_default_view 0 (min: 0, max: 1, clientdll archive per_user)
+	Which hero the settings menu shows while hero-specific settings are enabled: 0 the hero being played, 1 the base settings
+
 citadel_settings_dismissed_new_settings "" (clientdll archive per_user)
 	New Settings which have already been dismissed by the user
 
@@ -4594,6 +4600,9 @@ citadel_settings_last_scrollbar_position_read_only 0 (clientdll hidden archive)
 
 citadel_settings_new_setting_newness_duration 2592000 (developmentonly clientdll defensive)
 	Maximum age a new setting will be shown without dismissing
+
+citadel_settings_remember_selected_hero true (clientdll archive per_user)
+	Reopen the settings menu on the hero last selected in it, instead of its default view
 
 citadel_settings_scroll_panel_height_read_only 0 (clientdll hidden archive)
 	Last Settings menu total scroll panel height
@@ -4653,7 +4662,7 @@ citadel_shop_scroll_snap_threshold 5 (clientdll archive release)
 	How many pixels of scroll delta triggers a snap.  Source2 mouse wheel is hardcoded to 3.0 per integral mouse wheel click.
 
 citadel_shop_scroll_snap_to_tiers true (clientdll archive release)
-	Snap mouse wheel scrolling in the shop's filtered tab to price tiers. The arrow keys step a tier either way.
+	Snap mouse wheel scrolling in the shop's filtered tab to price tiers. The tier keybinds step a tier either way.
 
 citadel_shop_search_use_name_only false (clientdll archive)
 	Only match items based on the name of the item when searching
@@ -4669,9 +4678,6 @@ citadel_show_all_purchase_toasts false (clientdll archive)
 
 citadel_show_bullet_lag_compensation 0 (gamedll clientdll replicated cheat)
 	if > 0.0, show lag compensated hitboxes (value is seconds) whenever a bullet is lag compensated and hits something.
-
-citadel_show_chat_wheel_debug false (developmentonly clientdll)
-	Increase this to change how much you have to move your camera angle to make the mousewheel visible (degrees)
 
 citadel_show_chat_wheel_time 0.23 (clientdll archive)
 	How long it takes after pressing the +ping command for the chat wheel to appear.
@@ -4907,17 +4913,23 @@ citadel_stuck_camera_trace_extra_length 100 (gamedll clientdll replicated cheat)
 citadel_stuck_normal_find_trace_fallback_elevation 24 (gamedll clientdll replicated cheat)
 	<no description>
 
-citadel_sub_nav_outer_radius_scaler 0.412 (developmentonly clientdll defensive)
-	<no description>
-
-citadel_subnav_select_time 0 (developmentonly clientdll)
-	<no description>
-
 citadel_subtick_aim_data false (developmentonly gamedll clientdll replicated defensive)
 	Server wants sub-tick aim data
 
 citadel_subtitles_all_caps false (clientdll archive per_user)
 	Show the HUD subtitles in all caps.
+
+citadel_subtitles_ally_abilities true (clientdll archive per_user)
+	Show subtitles for ability and item voice lines from your hero and allies.
+
+citadel_subtitles_ally_conversations true (clientdll archive per_user)
+	Show subtitles for conversations between your hero and allies.
+
+citadel_subtitles_ally_kills true (clientdll archive per_user)
+	Show subtitles for kill, reaction, and match voice lines from your hero and allies.
+
+citadel_subtitles_ally_pings true (clientdll archive per_user)
+	Show subtitles for ping and chat wheel voice lines from your hero and allies.
 
 citadel_subtitles_background_color_b 0 (min: 0, max: 255, clientdll archive per_user)
 	Blue channel of the HUD subtitle background color.
@@ -4928,17 +4940,47 @@ citadel_subtitles_background_color_g 0 (min: 0, max: 255, clientdll archive per_
 citadel_subtitles_background_color_r 0 (min: 0, max: 255, clientdll archive per_user)
 	Red channel of the HUD subtitle background color.
 
+citadel_subtitles_background_opacity 93 (min: 0, max: 100, clientdll archive per_user)
+	Opacity, in percent, of the HUD subtitle background.
+
+citadel_subtitles_background_style 0 (min: 0, max: 1, clientdll archive per_user)
+	Style of the HUD subtitle background: 0 solid, 1 outline.
+
 citadel_subtitles_bold_font true (clientdll archive per_user)
 	Show the HUD subtitles in a semi-bold font rather than normal weight.
 
 citadel_subtitles_custom_style false (clientdll archive per_user)
 	Show the HUD subtitles in the player's custom size, colors, and font rather than the default style.
 
+citadel_subtitles_enemy_abilities true (clientdll archive per_user)
+	Show subtitles for ability and item voice lines from enemies.
+
+citadel_subtitles_enemy_kills true (clientdll archive per_user)
+	Show subtitles for kill, reaction, and match voice lines from enemies.
+
 citadel_subtitles_font 0 (min: 0, max: 2, clientdll archive per_user)
 	Font of the HUD subtitles: 0 default, 1 block, 2 stylized.
 
-citadel_subtitles_font_size 16 (min: 8, max: 24, clientdll archive per_user)
+citadel_subtitles_font_size 16 (min: 8, max: 32, clientdll archive per_user)
 	Font size of the HUD subtitles.
+
+citadel_subtitles_newscaster true (clientdll archive per_user)
+	Show subtitles for the Newscaster.
+
+citadel_subtitles_outline_thickness 2 (min: 0, max: 6, clientdll archive per_user)
+	Thickness, in pixels, of the outline around the HUD subtitles when their background style is outline.
+
+citadel_subtitles_patrons true (clientdll archive per_user)
+	Show subtitles for the Patrons.
+
+citadel_subtitles_shopkeeper true (clientdll archive per_user)
+	Show subtitles for the Shopkeeper and the Broker.
+
+citadel_subtitles_soul_urn true (clientdll archive per_user)
+	Show subtitles for the Soul Urn.
+
+citadel_subtitles_speaker_names 0 (min: 0, max: 2, clientdll archive per_user)
+	How the HUD subtitles show who is speaking: 0 icon and name, 1 icon only, 2 name only. Speakers without an icon always get their name.
 
 citadel_subtitles_text_color_b 198 (min: 0, max: 255, clientdll archive per_user)
 	Blue channel of the HUD subtitle text color.
@@ -5369,7 +5411,7 @@ citadel_unit_status_breakpoint_line_large_amt 1000 (developmentonly clientdll)
 citadel_unit_status_breakpoint_line_small_amt 250 (developmentonly clientdll)
 	<no description>
 
-citadel_unit_status_delta_decay_delay 0.5 (developmentonly clientdll)
+citadel_unit_status_delta_decay_delay 0.3 (developmentonly clientdll)
 	<no description>
 
 citadel_unit_status_delta_decay_rate 3 (developmentonly clientdll)
@@ -5389,6 +5431,9 @@ citadel_unit_status_healthbar_highlight_speed 2 (developmentonly clientdll)
 
 citadel_unit_status_height 210 (developmentonly clientdll)
 	<no description>
+
+citadel_unit_status_hero_name_mode 0 (min: 0, max: 2, clientdll archive per_user release)
+	Name shown above hero health bars. 0: player name, 1: hero name, 2: none
 
 citadel_unit_status_hide_names false (clientdll cheat release)
 	<no description>
@@ -5411,11 +5456,38 @@ citadel_unit_status_max_total_bars -1 (developmentonly clientdll)
 citadel_unit_status_min_distance_scale 0.2 (developmentonly clientdll)
 	<no description>
 
+citadel_unit_status_name_fade_end_dist 35 (developmentonly clientdll)
+	Distance in meters from the camera at which names above health bars are fully faded out
+
+citadel_unit_status_name_fade_start_dist 25 (developmentonly clientdll)
+	Distance in meters from the camera at which names above health bars start fading out
+
+citadel_unit_status_offset_player_min_z 75 (developmentonly clientdll)
+	Min z offset for character's whose offset attachment go very low
+
+citadel_unit_status_offset_player_z_offset_adjustment 16 (developmentonly clientdll)
+	Z Offset for all charcters, indpendent of the vmdl offset.
+
+citadel_unit_status_offset_smooth_large_delta 10 (developmentonly clientdll)
+	> this is a large delta
+
+citadel_unit_status_offset_smooth_max_rate 30 (developmentonly clientdll)
+	Smoothing for large deltas
+
+citadel_unit_status_offset_smooth_min_rate 2 (developmentonly clientdll)
+	Smoothing for small deltas
+
+citadel_unit_status_offset_smooth_small_delta 2 (developmentonly clientdll)
+	Around this is a small delta
+
 citadel_unit_status_opaque_dist_sq 50000 (developmentonly clientdll)
 	<no description>
 
 citadel_unit_status_recent_damage_time 0.25 (developmentonly clientdll)
 	<no description>
+
+citadel_unit_status_release_delay_time 5 (developmentonly clientdll)
+	Delay releasing unit status overlays back to the pool until after they've been hidden this long (seconds). <= 0 disables.
 
 citadel_unit_status_show_ally_health_value false (clientdll archive per_user)
 	Show health numbers on allied heroes' health bars when they take damage.
@@ -5431,12 +5503,6 @@ citadel_unit_status_show_stats false (developmentonly clientdll defensive)
 
 citadel_unit_status_stamina_consume_linger 5 (developmentonly clientdll)
 	<no description>
-
-citadel_unit_status_stamina_low_pips 1 (developmentonly clientdll)
-	Stamina is always shown while the target has this many pips or fewer.
-
-citadel_unit_status_stamina_low_show_window 2.5 (developmentonly clientdll)
-	How long a low stamina reading stays trusted without a fresh stamina message.
 
 citadel_unit_status_transparent_dist_sq 0 (developmentonly clientdll)
 	<no description>
@@ -5892,6 +5958,9 @@ cl_citadel_unit_query_draw_registry false (developmentonly clientdll cheat)
 	<no description>
 
 cl_citadel_wrecker_ultimate_debug_physics false (developmentonly clientdll)
+	<no description>
+
+cl_citadel_zipline_and_mantle_same_bind true (clientdll hidden userinfo)
 	<no description>
 
 cl_citadel_zoom_is_toggle false (clientdll archive userinfo per_user)
@@ -7166,31 +7235,13 @@ fish_dormant false (gamedll replicated cheat)
 fog_color [-1, -1, -1] (clientdll cheat)
 	<no description>
 
-fog_colorskybox [-1, -1, -1] (clientdll cheat)
-	<no description>
-
 fog_enable true (clientdll cheat)
 	Enable fog
-
-fog_enableskybox true (clientdll cheat)
-	<no description>
 
 fog_end -1 (clientdll cheat)
 	<no description>
 
-fog_endskybox -1 (clientdll cheat)
-	<no description>
-
 fog_hdrcolorscale -1 (clientdll cheat)
-	<no description>
-
-fog_hdrcolorscaleskybox -1 (clientdll cheat)
-	<no description>
-
-fog_maxdensity -1 (clientdll cheat)
-	<no description>
-
-fog_maxdensityskybox -1 (clientdll cheat)
 	<no description>
 
 fog_override 0 (clientdll cheat)
@@ -7212,9 +7263,6 @@ fog_override_start 1000 (cheat)
 	<no description>
 
 fog_start -1 (clientdll cheat)
-	<no description>
-
-fog_startskybox -1 (clientdll cheat)
 	<no description>
 
 fog_volume_debug false (developmentonly gamedll defensive)
@@ -7979,7 +8027,7 @@ labelled_debug_helper_show_text true (gamedll clientdll replicated cheat)
 labelled_debug_helper_skeleton_show_bone_names true (gamedll clientdll replicated cheat)
 	<no description>
 
-lb_allow_shadow_rotation true (developmentonly cheat menubar_item)
+lb_allow_shadow_rotation true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Shadow Rotation
 
 lb_barnlight_shadow_use_precomputed_vis true (developmentonly defensive)
@@ -8009,7 +8057,7 @@ lb_csm_draw_alpha_tested true (developmentonly defensive)
 lb_csm_draw_translucent true (developmentonly defensive)
 	<no description>
 
-lb_csm_fov_override -1 (developmentonly cheat)
+lb_csm_fov_override -1 (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
 lb_csm_override_bulb_radius -1 (developmentonly defensive)
@@ -8036,40 +8084,40 @@ lb_cubemap_normalization_max 32 (developmentonly defensive)
 lb_cubemap_normalization_roughness_begin 0.1 (developmentonly defensive)
 	<no description>
 
-lb_cull_offscreen_bounce_light_shadows true (developmentonly cheat)
+lb_cull_offscreen_bounce_light_shadows true (developmentonly cheat gameinfo_cannot_override)
 	Skip shadowmaps for offscreen dynamic bounce lights that indirect diffuse isn't going to sample
 
-lb_cull_onscreen_bounce_light_shadows false (developmentonly cheat)
+lb_cull_onscreen_bounce_light_shadows false (developmentonly cheat gameinfo_cannot_override)
 	Skip shadowmaps for *onscreen* dynamic bounce lights which will probably not be visible
 
-lb_debug_light_bounds false (developmentonly cheat menubar_item)
+lb_debug_light_bounds false (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug Light Bounds
 
-lb_debug_shadow_atlas false (developmentonly cheat menubar_item)
+lb_debug_shadow_atlas false (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug Shadow Atlas
 
-lb_debug_shadowtile_atlas false (developmentonly cheat menubar_item)
+lb_debug_shadowtile_atlas false (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug ShadowTile Atlas
 
-lb_debug_silhouette "" (enum: ESilhouetteType_t, developmentonly cheat menubar_item enum_value)
+lb_debug_silhouette "" (enum: ESilhouetteType_t, developmentonly cheat menubar_item gameinfo_cannot_override enum_value)
 	SceneSystem/LightBinner/Debug Silhouettes
 
-lb_debug_silhouette_sum 1 (min: 1, max: 3, developmentonly cheat)
+lb_debug_silhouette_sum 1 (min: 1, max: 3, developmentonly cheat gameinfo_cannot_override)
 	If we should draw normal silhouette or minkowski sum silhouette
 
-lb_debug_tiles "" (enum: ESilhouetteType_t, developmentonly cheat menubar_item enum_value)
+lb_debug_tiles "" (enum: ESilhouetteType_t, developmentonly cheat menubar_item gameinfo_cannot_override enum_value)
 	SceneSystem/LightBinner/Debug Tiles
 
-lb_debug_visualize_fog_shadowed_lights 0 (developmentonly cheat menubar_item)
+lb_debug_visualize_fog_shadowed_lights 0 (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug Visualize Fog Shadowed Lights
 
-lb_debug_visualize_lights 0 (developmentonly cheat menubar_item)
+lb_debug_visualize_lights 0 (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug Visualize Lights
 
-lb_debug_visualize_shadowed_light_details false (developmentonly cheat)
+lb_debug_visualize_shadowed_light_details false (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
-lb_debug_visualize_shadowed_lights 0 (developmentonly cheat menubar_item)
+lb_debug_visualize_shadowed_lights 0 (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug Visualize Shadowed Lights
 
 lb_dynamic_shadow_penumbra true (developmentonly defensive)
@@ -8093,52 +8141,52 @@ lb_dynamic_shadow_resolution_hysteresis 0.33 (min: 0.01, max: 1, developmentonly
 lb_dynamic_shadow_resolution_quantization 64 (min: 8, max: 128, developmentonly defensive)
 	Quantization of dynamically computed shadow size
 
-lb_enable_baked_shadows true (developmentonly cheat menubar_item)
+lb_enable_baked_shadows true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable Baked Shadows
 
 lb_enable_binning true (developmentonly menubar_item defensive)
 	SceneSystem/LightBinner/Enable Binning
 
-lb_enable_dynamic_lights true (developmentonly cheat)
+lb_enable_dynamic_lights true (developmentonly cheat gameinfo_cannot_override)
 	Allows rendering dynamic lights
 
-lb_enable_envmaps true (developmentonly cheat menubar_item)
+lb_enable_envmaps true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable EnvMaps
 
-lb_enable_fog_mixed_shadows true (developmentonly cheat menubar_item)
+lb_enable_fog_mixed_shadows true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable Fog Mixed Shadows
 
-lb_enable_lights true (developmentonly cheat menubar_item)
+lb_enable_lights true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable Lights
 
 lb_enable_shadow_casting true (developmentonly defensive)
 	Allow stationary/dynamic lights to cast shadows.
 
-lb_enable_stationary_lights true (developmentonly cheat)
+lb_enable_stationary_lights true (developmentonly cheat gameinfo_cannot_override)
 	Allows rendering stationary/mixed lights
 
-lb_enable_sunlight true (developmentonly cheat menubar_item)
+lb_enable_sunlight true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable Sunlight
 
-lb_low_quality_shader_fade_region_rescale 0 (developmentonly cheat)
+lb_low_quality_shader_fade_region_rescale 0 (min: 0, max: 1, developmentonly)
 	For envmaps in low quality shader mode, how much of the fade region to scale the envmap box by.
 
-lb_max_visible_barn_lights_override -1 (developmentonly cheat)
+lb_max_visible_barn_lights_override -1 (developmentonly cheat gameinfo_cannot_override)
 	Override maximum visible barn lights
 
-lb_max_visible_envmaps_override -1 (developmentonly cheat)
+lb_max_visible_envmaps_override -1 (developmentonly cheat gameinfo_cannot_override)
 	Override maximum visible envmaps
 
-lb_mixed_shadows true (developmentonly cheat menubar_item)
+lb_mixed_shadows true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable Mixed Shadows
 
-lb_override_barn_light_fade_sizes [0.05, 0.025] (developmentonly cheat)
+lb_override_barn_light_fade_sizes [0.05, 0.025] (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
-lb_override_barn_light_fade_sizes_enable false (developmentonly cheat)
+lb_override_barn_light_fade_sizes_enable false (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
-lb_override_barn_light_shadow_fade_sizes [0.1, 0.05] (developmentonly cheat)
+lb_override_barn_light_shadow_fade_sizes [0.1, 0.05] (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
 lb_precomputed_shadowmap_depth_bias 0.00035 (developmentonly)
@@ -8150,10 +8198,10 @@ lb_precomputed_shadowmap_depth_bias_perspective 0.01 (developmentonly)
 lb_precomputed_shadowmap_enable true (developmentonly)
 	<no description>
 
-lb_shadow_map_cull_empty_mixed false (cheat)
+lb_shadow_map_cull_empty_mixed false (cheat gameinfo_cannot_override)
 	Don't render shadows for mixed shadowmaps with no dynamics objects in view
 
-lb_shadow_map_culling true (cheat)
+lb_shadow_map_culling true (cheat gameinfo_cannot_override)
 	<no description>
 
 lb_shadow_texture_height_override -1 (developmentonly defensive)
@@ -8186,13 +8234,13 @@ lb_time_sliced_shadow_map_rendering_enable true (developmentonly defensive)
 lb_timesliced_shadows_dynamic_size true (developmentonly defensive)
 	<no description>
 
-lb_use_ellipsoid_bounds true (developmentonly cheat)
+lb_use_ellipsoid_bounds true (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
-lb_use_illumination_silhouette true (developmentonly cheat menubar_item)
+lb_use_illumination_silhouette true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Use Illumination Bounds
 
-lb_use_illumination_volume true (developmentonly cheat)
+lb_use_illumination_volume true (developmentonly cheat gameinfo_cannot_override)
 	Disables use of illumination volume (may cause precomputed lighting errors)
 
 leaderboards_cache_duration 600 (developmentonly clientdll)
@@ -9929,6 +9977,9 @@ panorama_suspend_animation false (developmentonly hidden defensive)
 panorama_suspend_paint false (developmentonly hidden defensive)
 	<no description>
 
+panorama_synced_font_size_spew false (developmentonly clientdll hidden defensive)
+	Log SyncedFontSizeLabel group constraints and shared font size changes
+
 panorama_temp_comp_layer_min_dimension 512 (developmentonly hidden defensive)
 	<no description>
 
@@ -10164,18 +10215,6 @@ ping_indicator_safe_area_x 480 (developmentonly clientdll defensive)
 	<no description>
 
 ping_indicator_safe_area_y 200 (developmentonly clientdll defensive)
-	<no description>
-
-ping_target_reset_time 1.2 (developmentonly clientdll)
-	<no description>
-
-ping_trace_radius 5 (developmentonly clientdll)
-	<no description>
-
-ping_trace_radius_expanded 60 (developmentonly clientdll)
-	<no description>
-
-ping_trace_radius_minimap 60 (developmentonly clientdll)
 	<no description>
 
 ping_wheel_phrase_0 1 (clientdll archive per_user)
@@ -10508,6 +10547,9 @@ r_citadel_depthoffield_mode 0 (min: 0, max: 2, developmentonly clientdll gameinf
 r_citadel_depthoffield_sensor_size 1 (min: 0.5, max: 3, developmentonly clientdll gameinfo_cannot_override)
 	Depth of field sensor size in inches
 
+r_citadel_disable_particle_lights false (clientdll release)
+	Disable particle lights except when explicitly overriden in particle renderer ops.
+
 r_citadel_distancefield_ao_quality 0 (developmentonly clientdll defensive)
 	Distance Field AO quality
 
@@ -10627,12 +10669,6 @@ r_citadel_npr_outlines true (developmentonly clientdll cheat gameinfo_cannot_ove
 
 r_citadel_npr_outlines_max_dist 1000 (min: 0, developmentonly clientdll cheat gameinfo_cannot_override)
 	Maximum distance at which NPR outlines are rendered
-
-r_citadel_portrait_allow_particle_only true (developmentonly clientdll)
-	<no description>
-
-r_citadel_portrait_highlight_particle_only false (developmentonly clientdll)
-	<no description>
 
 r_citadel_render_game true (developmentonly clientdll cheat gameinfo_cannot_override)
 	Should you render the main game world
@@ -10835,7 +10871,7 @@ r_experimental_lag_limiter false (developmentonly defensive)
 r_extra_render_frames 0 (cheat)
 	<no description>
 
-r_fallback_texture_lod_scale 2 (cheat)
+r_fallback_texture_lod_scale 2 (cheat gameinfo_cannot_override)
 	Scale factor for requested texture size (texture streaming) - used for geo that doesn't have a precomputed UV density measure
 
 r_farz -1 (clientdll cheat)
@@ -11165,9 +11201,6 @@ r_particle_debug_vector_attribute_scale 1 (developmentonly)
 r_particle_enable_fastpath true (developmentonly)
 	<no description>
 
-r_particle_explicit_fetch false (developmentonly)
-	<no description>
-
 r_particle_fixedrandomseeds false (developmentonly)
 	Use fixed seeds for easier debugging
 
@@ -11384,7 +11417,7 @@ r_texture_eager_eviction false (developmentonly defensive)
 r_texture_hookup_uses_threadpool true (developmentonly defensive)
 	Async Texture hookup uses its own threadpool instead of the global pool.
 
-r_texture_lod_scale 1 (cheat)
+r_texture_lod_scale 1 (cheat gameinfo_cannot_override)
 	Scale factor for requested texture size (texture streaming)
 
 r_texture_nonstreaming_load true (developmentonly defensive)
@@ -11849,19 +11882,19 @@ sc_clutter_desity_override false (developmentonly)
 sc_clutter_enable true (developmentonly menubar_item)
 	SceneSystem/Clutter/Draw Clutter
 
-sc_disableThreading false (cheat)
+sc_disableThreading false (developmentonly defensive)
 	<no description>
 
 sc_disable_baked_lighting false (developmentonly defensive)
 	<no description>
 
-sc_disable_culling_boxes false (cheat)
+sc_disable_culling_boxes false (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_disable_procedural_layer_rendering false (cheat)
+sc_disable_procedural_layer_rendering false (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_disable_shadow_fastpath false (cheat)
+sc_disable_shadow_fastpath false (developmentonly defensive)
 	<no description>
 
 sc_disable_spotlight_shadows false (cheat gameinfo_cannot_override)
@@ -11879,22 +11912,22 @@ sc_dithered_lod_transition_amt 0.075 (min: 0, max: 0.2, developmentonly defensiv
 sc_draw_aggregate_meshes true (developmentonly menubar_item)
 	SceneSystem/Aggregates/Draw Aggregates
 
-sc_dump_lists "" (cheat)
+sc_dump_lists "" (cheat gameinfo_cannot_override)
 	<no description>
 
 sc_enable_discard true (developmentonly defensive)
 	<no description>
 
-sc_extended_stats false (cheat)
+sc_extended_stats false (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_fade_distance_scale_override -1 (cheat)
+sc_fade_distance_scale_override -1 (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_fog_cull true (cheat)
+sc_fog_cull true (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_force_lod_level -1 (cheat)
+sc_force_lod_level -1 (cheat gameinfo_cannot_override)
 	<no description>
 
 sc_force_materials_batchable false (cheat)
@@ -11903,7 +11936,7 @@ sc_force_materials_batchable false (cheat)
 sc_force_single_display_list_per_layer false (developmentonly defensive)
 	<no description>
 
-sc_force_translation_in_projection false (cheat)
+sc_force_translation_in_projection false (cheat gameinfo_cannot_override)
 	If enabled, the camera's translation will be included in the projection matrix.
 
 sc_hdr_enabled_override -1 (developmentonly defensive)
@@ -12005,22 +12038,22 @@ sc_no_cull false (developmentonly defensive)
 sc_no_vis false (developmentonly defensive)
 	<no description>
 
-sc_only_render_opaque false (cheat)
+sc_only_render_opaque false (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_only_render_shadowcasters false (cheat)
+sc_only_render_shadowcasters false (cheat gameinfo_cannot_override)
 	<no description>
 
 sc_particle_debug_visualizer false (developmentonly cheat menubar_item)
 	SceneSystem/Particles/Debug Visualizer
 
-sc_reject_all_objects false (cheat)
+sc_reject_all_objects false (developmentonly defensive)
 	<no description>
 
 sc_rendergraph_debug_visualizer false (developmentonly menubar_item)
 	SceneSystem/RenderGraph Visualizer
 
-sc_screen_size_lod_scale_override -1 (cheat)
+sc_screen_size_lod_scale_override -1 (developmentonly defensive)
 	<no description>
 
 sc_shadow_depth_bias 256 (developmentonly defensive)
@@ -12035,7 +12068,7 @@ sc_shadow_depth_bias_state_override false (developmentonly defensive)
 sc_shadow_slopescale_depth_bias 2.13 (developmentonly defensive)
 	<no description>
 
-sc_show_cs_skinning_stats false (developmentonly cheat menubar_item)
+sc_show_cs_skinning_stats false (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/Compute Skinning Stats
 
 sc_show_gpu_profiler false (developmentonly cheat menubar_item)
@@ -12050,13 +12083,13 @@ sc_show_object_browser false (developmentonly cheat menubar_item)
 sc_show_texture_visualizer false (developmentonly cheat menubar_item)
 	SceneSystem/Texture Visualizer
 
-sc_show_view_profiler false (developmentonly cheat menubar_item)
+sc_show_view_profiler false (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/View Profiler
 
-sc_show_vt_stats false (developmentonly cheat)
+sc_show_vt_stats false (developmentonly cheat gameinfo_cannot_override)
 	SceneSystem/Virtual Texturing
 
-sc_skip_traversal false (cheat)
+sc_skip_traversal false (developmentonly defensive)
 	<no description>
 
 sc_spew_cmt_usage false (developmentonly defensive)
@@ -14557,4 +14590,4 @@ zipline_use_new_latch 2 (developmentonly gamedll clientdll replicated defensive)
 
 zoom_sensitivity_ratio 1 (min: 0.01, max: 3, clientdll archive per_user)
 	Additional mouse sensitivity scale factor applied when FOV is zoomed in.
-dditional mouse sensitivity scale factor applied when FOV is zoomed in.
+ditional mouse sensitivity scale factor applied when FOV is zoomed in.

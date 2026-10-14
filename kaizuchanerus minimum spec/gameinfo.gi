@@ -470,7 +470,7 @@
 	WorldRenderer
 	{
 		EnvironmentMaps					1
-		EnvironmentMapFaceSize			256
+		EnvironmentMapFaceSize			2048
 		EnvironmentMapRenderSize		1024
 		EnvironmentMapFormat			BC6H
 		EnvironmentMapPreviewFormat 		BC6H
@@ -760,6 +760,8 @@ r_force_thick_hair 0 // Don't force thick hair (cheaper)
 
 
 // MODEL LOD, GEOMETRY & CULLING
+citadel_player_model_force_highest_lod false
+
 skeleton_instance_lod_optimization 1 // Compute LOD mask internally (cheaper bone LOD, default false)
 r_morphing_enabled 0 // Disable vertex morph targets / facial expressions (cheat)
 r_smooth_morph_normals 0 // Disable smooth morph normals (cheaper)
@@ -781,6 +783,7 @@ sc_force_materials_batchable 1 // Force materials to be batchable (cheat, defaul
 
 
 // RAGDOLLS, LIGHTS & CLIENT THREADING ziak
+r_citadel_disable_particle_lights 1
 cl_disable_ragdolls 1 // Completely disable ragdolls (cheat, default false)
 cl_ragdoll_default_scale 0 // Scale ragdoll to 0 (devonly, default 1)
 cl_ragdoll_limit 0 // No client ragdolls (default 20). Dead units vanish instantly

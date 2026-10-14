@@ -13,7 +13,7 @@
 //         /!#%|'-_- '\%k*|
 //     o   |*@/        \_/
 //         \)&|
-// OptimizationLock Maxfps Version v1.0 by Sqooky with help from others <3
+// OptimizationLock Maxfps Version Ver.1.2 by Sqooky with help from others <3
 
 // As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more
 //  Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
@@ -220,21 +220,21 @@ GameInfo
             Game_UILanguage "citadel_*LANGUAGE*"
 
             // These are optional low-violence paths. They will only get mounted if you're in a low-violence mode.
-            Game_UILanguage  "citadel_*LANGUAGE*"
+            Game_UILanguage "citadel_*LANGUAGE*"
             Game_LowViolence "citadel_lv"
 
-            Mod   "citadel"
-            Write "citadel"
-            Game  "citadel/custom"
-            Game  "citadel/addons"
-            Game  "citadel"
-            Game  "core"
+            Mod                 citadel
+            Write               citadel
+            Game                citadel/custom
+            Game                citadel/addons
+            Game                citadel
+            Game                core
         }
 
         LegacyUserSettingsPathID "MOD"
         UserSettingsPathID       "USRLOCAL" // this needs to be commented out in order to have citadel/cfg/video.txt usable, however if this is commented out it will force you into low violence mode (make drifter and mina purple)
-        // If it isn't commented out then you will need to edit the video.txt located at
-        // Windows: \steam\userdata\your_steam_id\1422450\local\cfg
+        // If it isn't commented out then you will need to edit the video.txt located at 
+        // Windows: \steam\userdata\your_steam_id\1422450\local\cfg 
         // Linux:  ~/.steam/steam/userdata/your_steam_id/1422450/local/
 
     }
@@ -754,7 +754,7 @@ GameInfo
         //      If you would like to donate as a means of showing thanks I have a kofi.     \\
         //      https://ko-fi.com/sqooky                                                    \\
 
-        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. Maxfps 1.1 -------- \\
+        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. Maxfps 1.2 -------- \\
         // The github is here https://github.com/Sqooky/OptimizationLock  \\
         // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
         // The gamebanana:https://gamebanana.com/mods/656341 (it's usually behind, please check the github) \\
@@ -765,18 +765,20 @@ GameInfo
         // ================ Preferences ================
         // --- 0. IMPORTANT ---
         // mm_prefer_solo_only                   "true"  // If I understand what this command does, this command controls whether or not you are matched with other solo queue players. For me this dramatically improved the solo queue performance but I am not sure if that is placebo. [def: "false"]
-        citadel_camera_use_vmdl_flatten_vertical "true"    // This command should improve responsiveness of mouse input makes rem and venator's cameras move slightly downwards when aiming down scope. Not exactly a dealbreaker but might be undesirable for some.                                                                                                                                      [def: "true"]
-        citadel_portrait_world_renderer_off      "false"   // Disables character models in shop and endgame screen                                            [def: "false"]
-        citadel_trooper_glow_disabled            "1"       // 1 = Disable friendly/enemy minion glow.                                                         [def: "0"]
-        cl_phys_enabled                          "false"   // Disables all physics. This means ragdolls just maintain the last pose and boxes don't fall over [def: "true"]
-        lb_enable_dynamic_lights                 "false"   // SET THIS TO TRUE TO MAKE HERO PORTRAITS HAVE COLOR IN THE SHOP AND ENDGAME *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
-        r_citadel_enable_pano_world_blur         "true"    // This command disables the blur in the shop and improves the performance of the shop DRAMATICALLY however it can cause visual issues with the pause menu on nvidia systems running vulkan. Please experiment. [def: "true"]
-        r_particle_explicit_fetch                "false"   // [def: "false"]        // I believe this improves performance but will make soul orbs a bit difficult to see
-        r_particle_max_size_cull                 "900"     // [def: "1200"] // Particle systems larger than this in every dimension skip culling to save CPU.  They will be drawn anyway. // So particle culling is handled by the CPU in deadlock, if you have GPU overhead to spare, consider lowering this value.
-        r_size_cull_threshold                    "1.4"     // This will control the distance trooper healthbars and boxes stop rendering *Culls small objects sooner based on screen size threshold (higher = more culling). [def: "0.8"]
-        sc_screen_size_lod_scale_override        "0.00001" // Controls LOD scale. Lower values will make sinners and playermodels look worse "my sinner's lights are little triangles" [def: "-1"]
-        steam_inputhandler_enabled               "true"    // This disables controller support when set to false. Setting to false should improve performance if you're not on a steam deck, but some people are, and I don't want an influx of "why no work with controller"  [def: "true"]
-        citadel_in_world_item_panel_dpi          "0"       // This controls the quality of the text above soul pickups, so boxes, golden statues, and soul orbs. Higher values mean better quality, lower means worse. [def: "2"]
+        citadel_player_model_force_highest_lod "false" // Courtesy of dohn valve too, allows the player model to render lowest LoD from your sc_screensize_lod_scale_override setting if you so choose [def: "true"]
+citadel_camera_use_vmdl_flatten_vertical "true"  // Setting this command to false should improve responsiveness of mouse input but makes Rem, Venator, AND ESPICIALLY RAT KING's cameras move downwards when aiming down scope. Not exactly a dealbreaker but might be undesirable for some.                                                                                                                                      [def: "true"]
+        citadel_per_weapon_per_surface_impact_effects "false" // Reduces the visuals for bullet tracers. This will disable the radius of yamato right click. [def: "true"]
+        citadel_portrait_world_renderer_off      "false" // Disables character models in shop and endgame screen                                            [def: "false"]
+        citadel_trooper_glow_disabled            "1"     // 1 = Disable friendly/enemy minion glow.                                                         [def: "0"]
+        cl_phys_enabled                          "false"  // Disables all physics. This means ragdolls just maintain the last pose and boxes don't fall over [def: "true"]
+        lb_enable_dynamic_lights                 "false" // SET THIS TO TRUE TO MAKE HERO PORTRAITS HAVE COLOR IN THE SHOP AND ENDGAME *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
+        r_citadel_enable_pano_world_blur         "true"  // This command disables the blur in the shop and improves the performance of the shop DRAMATICALLY however it can cause visual issues with the pause menu on nvidia systems running vulkan. Please experiment. [def: "true"]
+        r_particle_explicit_fetch                "false" // [def: "false"]        // I believe this improves performance but will make soul orbs a bit difficult to see
+        r_particle_max_size_cull                 "900"   // [def: "1200"] // Particle systems larger than this in every dimension skip culling to save CPU.  They will be drawn anyway. // So particle culling is handled by the CPU in deadlock, if you have GPU overhead to spare, consider lowering this value.
+        r_size_cull_threshold                    "1.4"   // This will control the distance trooper healthbars and boxes stop rendering *Culls small objects sooner based on screen size threshold (higher = more culling). [def: "0.8"]
+        sc_screen_size_lod_scale_override        "0.00001"  // Controls LOD scale. Lower values will make sinners and playermodels look worse "my sinner's lights are little triangles" [def: "-1"]
+        steam_inputhandler_enabled               "true"  // This disables controller support when set to false. Setting to false should improve performance if you're not on a steam deck, but some people are, and I don't want an influx of "why no work with controller"  [def: "true"]
+        citadel_in_world_item_panel_dpi        "0"    // This controls the quality of the text above soul pickups, so boxes, golden statues, and soul orbs. Higher values mean better quality, lower means worse. [def: "2"]
 
         // --- Render Distance ---
         r_farz       "7000" // This controls the far clipping plane, ie building/player popin   [def: "-1"]
@@ -798,7 +800,7 @@ GameInfo
 
         // --- 2. Field of View ---
         // r_aspectratio changes the zoom of the camera which in turn doesn't make the punch zoom in as jarring, but the command is not as intuitive to set precisely
-        r_aspectratio "2.9" // 1.75=80fov | 2.15=90fov | 2.49=100fov (every .15 interval = 5 fov).
+        r_aspectratio "2.5" // 1.75=80fov | 2.15=90fov | 2.49=100fov (every .15 interval = 5 fov).
 
         // --- 3. HUD ---
         citadel_unit_status_stamina_low_pips            "7"     // below this threshold stamina is permanantly visble [def: "3"]
@@ -811,9 +813,6 @@ GameInfo
         citadel_hud_objective_health_enabled            "2"     // 0=Off, 1=Shrines, 2=T1/T2, 3=Barracks.                           [def: "2"]
         citadel_unit_status_old_update_rate             "15"    // How frequently health bars can update. Lowering it should improve performance    [def: "30"]
         citadel_unit_status_single_bar_mode             "false" // This makes the v2 halth bar be one bar as opposed to multiple, which I find more easily readable [def: "false"]
-        citadel_unit_status_use_new                     "true"  // This uses new Health Bar, to use old Health Bar change "true" to "false".                    [def: "false"]
-        citadel_unit_status_use_v2                      "0"     // Set to 1 to enable the new health bar that allows you to  see enemy stamina.                 [def: "0"]
-        citadel_unit_status_use_v2_for_nonplayers       "0"     // Set to 1 to enable the new health bar but for troopers, objs, and camps.                     [def: "0"]
         v8_maximum_heap_size_mb                         "1024"  // This should double the amount of cache used by the ingame hud, so less stutter! Yay!
         panorama_comp_layer_lru_lifetime                "4"     // This should keep panorama caches loaded for longer so the game can use them more frequently. [def: "1"]
         // panorama_render_target_cache_max_size        "134217728" // This should increase the panorama cache size by 4x, needs more testing                       [def: "31457280"]
@@ -821,8 +820,6 @@ GameInfo
         // --- 3.1 Uncomment These Commands if You Want to Have The Chat Wheel Not Show Up When Pinging ---
         // citadel_show_chat_wheel_angle_threshold         "30"    // (degrees) Increase this to change how much you have to move your camera angle to make the Chat Wheel instantly visible while holding Ping. [def: "16"]
         // citadel_show_chat_wheel_time                    "15"    //
-        // citadel_auto_ping_window                        "0"     //
-        // citadel_ping_wheel_activation_radius            "1"     //
 
         // --- 4. Lighting & Shadows ---
         lb_enable_baked_shadows     "false" // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
@@ -835,7 +832,7 @@ GameInfo
         panorama_max_overlay_fps                   "30"    // Fps In the settings/esc menu.                                    [def: "60"]
 
         // --- 6. Camera Tweaks ---
-        citadel_melee_shake_duration "0"
+        citadel_melee_shake_duration 0
         // citadel_camera_listening_offset    "-1"   // To be completely honest I have no idea but I want to test this.  [def: "0"]
         citadel_camera_soft_collision_angle         "75"    //                                                                  [def: "75"]
         citadel_camera_use_vmdl_flatten_horizontal  "false" // From my understanding of how these commands work, they slightly smooth camera inputs. This should make the camera more responsive?   [def: "true"]
@@ -963,14 +960,15 @@ GameInfo
         // gpu_mem_level         "1"     // GPU Memory level.                                                        [def: "2"]
 
         // ================ Particles ================
-        cl_particle_sim_fallback_base_multiplier "100" // How aggressive the switch to fallbacks will be depending on how far over the cl_particle_sim_fallback_threshold_ms the sim time is.  Higher numbers are more aggressive. [def: "5"]
-        cl_particle_sim_fallback_threshold_ms    "1"   // Amount of simulation time that can elapse before new systems start falling back to cheaper versions [def: "6"]
-        cl_particle_fallback_multiplier          "10"  // Multiplier for falling back to cheaper effects under load.       [def: "0"]
-        cl_particle_fallback_base                "5"   // Base for falling back to cheaper effects under load.             [def: "0"]
         // r_particle_mixed_resolution_viewstart    "16"     // I don't know if this does anything but I didn't notice anything terrible out the gate and lowering particle resolution can't hurt [def: "500"]
         //r_particle_timescale                  "1"      // Speeds up particle simulation, thus making them end sooner, however this causes visual desyncs, most notably with big effects that last a while such as infernus ult. Please tweak this to what you are comfortable with. [def: "1"]
         cl_aggregate_particles                   "true"    // Doesn't seem to cause any issues but a benchmark proper should be conducted [def: "false"]
         cl_particle_batch_mode                   "1"       // Has a range of 1 or 2, 2 will make celeste's auto rebound look weird and 0 will make them not batch [def: "1"]
+        cl_particle_fallback_base                "5"       // Base for falling back to cheaper effects under load.             [def: "0"]
+        cl_particle_fallback_multiplier          "10"      // Multiplier for falling back to cheaper effects under load.       [def: "0"]
+        cl_particle_sim_fallback_base_multiplier "100"     // How aggressive the switch to fallbacks will be depending on how far over the cl_particle_sim_fallback_threshold_ms the sim time is.  Higher numbers are more aggressive. [def: "5"]
+        cl_particle_sim_fallback_threshold_ms    "1"       // Amount of simulation time that can elapse before new systems start falling back to cheaper versions [def: "6"]
+        r_citadel_disable_particle_lights        "true"    // Thank you Dohn VALVe for pushing and telling me about this command, I love you [def: "false"]
         r_citadel_screenspace_particles_full_res "true"    // Render screen space particles at full resolution. This could introduce readability issues but should be fine. [def: "true"]
         r_draw_particle_children_with_parents    "1"       // I believe this handles the drawing of little visual flourish particles. [def: "-1"]
         r_limit_particle_job_duration            "true"    // Seems to help with particle clutter, although I am not sure.             [def: "false"]
@@ -993,7 +991,6 @@ GameInfo
         phys_cull_internal_mesh_contacts        "true"  // Don't simulate the bones inside of a mesh.                       [def: "false"]
         sc_aggregate_bvh_threshold              "256"   // Not fully sure what these do. Don't change them.                 [def: "128"]
         sc_allow_dithered_lod                   "false" // Pretty sure this just turns dithering off for when switching between lods. Isn't a big deal [def: "true"]
-        sc_fade_distance_scale_override         "100"   // Distance objects fade in and out                                 [def: "-1"]
         sc_instanced_mesh_motion_vectors        "0"     // Set 1 if you use motion blur                                     [def: "1"]
         sc_instanced_mesh_size_cull_bias_shadow "10"    // Bias for size culling instanced meshes in shadowmaps             [def: "2"]
         sc_layer_batch_threshold                "256"   // Not fully sure what these do. Don't change them.                 [default: "128"]
@@ -1012,7 +1009,6 @@ GameInfo
         rtx_dynamic_blas_caching      "true"  //                                                                  [def: "true"]
         rtx_force_default_hitgroup    "true"  //                                                                  [def: "false"]
         rtx_texture_resolution        "64"    //                                                                  [def: "true"]
-        sc_allow_dithered_lod         "false" // This should dither the lod to make it less obtrusive             [def: "true"]
         sc_instanced_mesh_opaque_fade "false" // Fade meshes? NAH                                                 [def: "true"]
 
 
@@ -1078,7 +1074,7 @@ GameInfo
         snd_soundmixer_version                   "2"     // [def: "2"]
         snd_steamaudio_reverb_order_rendering    "0"     // The amount of directional detail in the rendered audio by Steam Audio. [def: "0"]
         snd_ui_positional                        "false" // Disables positional audio to save cpu                            [def: "true"]
-        snd_steamaudio_num_threads               "6"     // Audio thread count                                               [def: "4"]
+        snd_steamaudio_num_threads               "4"     // Audio thread count                                               [def: "4"]
         audio_enable_spawn_mask_mix_layer        "false" // Disabling these should help with performance, Yay! [def: "true"]
         snd_boxverb_simd                         "false" // Disabling these should help with performance, Yay! [def: "true"]
         snd_enable_subgraph_corenull_passthrough "false" // Disabling these should help with performance, Yay! [def: "true"]
@@ -1093,7 +1089,7 @@ GameInfo
         csm_cascade2_override_dist               "0"     // All of these commands should reduce shadow quality.
         csm_cascade3_override_dist               "0"     // All of these commands should reduce shadow quality.
         csm_max_dist_between_caster_and_receiver "0"     // All of these commands should reduce shadow quality.
-        csm_max_num_cascades_override            "0"     // All of these commands should reduce shadow quality.
+        csm_max_num_cascades_override            "2"     // All of these commands should reduce shadow quality.
         csm_max_visible_dist                     "0"     // All of these commands should reduce shadow quality.
         csm_res_override_0                       "1"     // All of these commands should reduce shadow quality.
         csm_res_override_1                       "1"     // All of these commands should reduce shadow quality.
@@ -1103,7 +1099,6 @@ GameInfo
 
         // ================ Disabling Inverse Kinematics ================
         // This segment just disables everything pertaining to inverse kinematics. As far as I can tell it doesn't produce animation artifacts and marginally improves performance
-        enable_boneflex                   "false"
         ik_constraints_enabled            "false"
         ik_debug_dogleg3bone_enabled      "false"
         ik_debug_fabrik_backwards_enabled "false"
@@ -1111,7 +1106,6 @@ GameInfo
         ik_enable                         "false"
         ik_fabrik_backwards_enabled       "false"
         ik_fabrik_forwards_enabled        "false"
-        ik_final_fixup_enable             "false"
         ik_planetilt_enable               "false"
 
         // ================ Disabling Animgraph Stuff ================
@@ -1136,7 +1130,6 @@ GameInfo
         // citadel_crosshair_hit_marker_duration    "0.00001"       // Removes the hitmarker when shooting people.                      [def: "0.1"]
         // citadel_damage_text_show_effectiveness   "0"             // Shows extra “effectiveness” info in damage text (e.g., resist/weakness style feedback). As far as I can tell this is unfinished right now [def: "0"]
         // citadel_first_person                     "true"          // Puts you in first person, messes up character rendering
-        // citadel_outer_radius_scaler              "0"             // For some reason setting this to zero disables ping wheel input.
         // citadel_roster_select_force_enable_priority_token "true" // Causes a crash but does what you think it would.
         // citadel_rp_show_dev_messages             "true"          // Rich presence debug messages. Spams console with "x is doing y in the hideout"
         // citadel_weapon_spread_debug              true            // Doesn't seem to do anything.
@@ -1163,18 +1156,15 @@ GameInfo
         // r_citadel_selection_outline2_alpha       "0.2"           // Outlines on enemy players and abilities on a scale of 0-1.       [def: "0.8"]
         // r_dopixelvisibility                      "0"             // Causes issues with boxes being invisible
         // r_draw3dskybox                           "0"             //  Enables drawing the 3D skybox layer (distant geometry).         [def: "1"]
-        // r_draw_first_tri_only                    "true"          // Only draw the first triangle. Only works on dx11, causes issues with every playermodel and the hud for some reason [def: "false"]
         // r_draw_first_tri_only                    "true"          // Only draws the first triangle. Surprisingly this only supports dx11 [def: "false"]
         // r_draw_instances                         "0"             //causes boxes to freak out on dx11
         // r_draw_overlays                          "0"             //causes problems with the hud
         // r_drawdecals                             "1"             // *Render decals. If not set to true lash's slam and warden's ult indicators become quite difficult to see.                                                  [def: "1"]
         // r_drawskybox                             "true"          // Can't be changed anymore                                             [def: "true"]
         // r_drawtracers                            "0"             // Makes lash's ground slam marker invisible. I would enable it anyway but I don't like getting fifty trillion "how do I fix this" dms
-        // r_drawtracers                            "false"         // disables lash's ground strike indicator
         // r_dx11_software_cmd_lists                "0"             // causes a lot of issues
         // r_extra_render_frames                    "1"             // Setting this to anything above 0 causes issues with latency. negative values cause the game to crash. [def: "0"]
         // r_frame_sync_enable                      "false"         // Setting this to false causes vram to overflow to normal ram for some reason? Game freaks out.                [def: "true"]
-        // r_opaque                                 "false          // makes the map invisible
         // r_opaque                                 "false"         // Causes the map to not be rendered.
         // r_showdebugoverlays                      "true"          // Shows a ton of debug overlays IT MAKES ME SO HAPPY I LOVE IT     [def: "false"]
         // r_skinning_enabled                       "false"         // makes players a pose
@@ -1192,9 +1182,7 @@ GameInfo
         fog_enableskybox         "false" // I doubt the fog commands actually are modifiable but I am maintaining their inclusion for posterity
         volume_fog_enable_jitter "false" // Don't think I can
 
-        // --------------------------------- END OF CONFIG OptimizationLock -- ver. Maxfps 1.1 ------------------------------- \\
-
-        citadel_unit_status_stamina_low_pips "7"
+        // --------------------------------- END OF CONFIG OptimizationLock -- ver. Maxfps 1.3 ------------------------------- \\
 
 
         // ====================== SV commands we cannot change but I want to maintain documentation for ======================
@@ -1222,46 +1210,128 @@ GameInfo
 
 
         // ====================== Testing Version Commands ======================
-        audio_enable_spawn_mask_mix_layer          "false"
-        citadel_enable_new_ping_particle           "true"
-        citadel_fibonnaci_sphere_trace_los_max     "80"
-        citadel_minimap_overlap_scan_distance      "0"
-        citadel_orb_debug_draw_state               "1"
-        citadel_player_outline_enemies             "false"
-        citadel_portrait_unit_ag2_enable           "false"
-        citadel_unit_status_hide_names             "true"
-        con_enable                                 "true"
-        debug_draw_enable                          "false"
-        enable_boneflex                            "false"
-        engine_low_latency_sleep_after_client_tick "true"
-        fog_enable                                 "false"
-        fog_enableskybox                           "false"
-        lb_allow_time_sliced_shadow_map_rendering  "false"
-        lb_bin_slices                              "0"
-        lb_enable_fog_mixed_shadows                "false"
-        lb_enable_newsum                           "false"
-        lb_enable_shadow_casting                   "false"
-        lb_enable_sunlight                         "false"
-        lb_mixed_shadows                           "false"
-        lb_precomputed_shadowmap_enable            "false"
-        r_citadel_fsr_enable_mip_bias              "false"
-        r_enable_cubemap_fog                       "false"
-        r_enable_gradient_fog                      "false"
-        r_enable_rigid_animation                   "false"
-        r_enable_volume_fog                        "false"
-        r_morphing_enabled                         "false"
-        sc_aggregate_gpu_vis_culling               "true"
-        sc_hdr_enabled_override                    "0"
-        sc_instanced_mesh_enable                   "false"
-        sc_instanced_mesh_gpu_density_culling      "false"
-        snd_boxverb_simd                           "false"
-        snd_enable_subgraph_corenull_passthrough   "false"
-        sparseshadowtree_disable_add_layers        "false"
-        steam_inputhandler_enabled                 "false"
-        tv_enable_delta_frames                     "false"
-        vis_sunlight_enable                        "false"
-        volume_fog_enable_jitter                   "false"
-
+        // r_fallback_texture_lod_scale                           "8"
+        // r_propsmaxdist                                         "600"
+        ai_async_queue_max_jobs                                "1"     //
+        ai_foot_sweep_enable                                   "false" //
+        ai_gather_conditions_async                             "true"  //
+        ai_lod_auto_enabled                                    "true"  //
+        ai_strong_optimizations_no_checkstand                  "1"     //
+        ai_think_interval                                      "0.3"   //
+        ai_think_interval_lod_low                              "1"     //
+        ai_think_interval_lod_med                              "0.4"   //
+        ai_think_interval_lod_very_low                         "2"     //
+        ai_use_async_ragdoll_fixup                             "true"  //
+        animgraph_enable_dirty_netvar_optimization             "true"  //
+        citadel_damage_indicator_height                        "10"    //
+        citadel_damage_indicator_radius                        "1"     //
+        citadel_damage_indicator_width                         "10"    //
+        citadel_enable_new_ping_particle                       "true"  //
+        citadel_fibonnaci_sphere_trace_los_max                 "80"    //
+        citadel_hud_objective_health_idle_timeout              "0"     //
+        citadel_minimap_overlap_scan_distance                  "0"     //
+        citadel_orb_debug_draw_state                           "1"     //
+        citadel_player_outline_enemies                         "false" //
+        citadel_portrait_unit_ag2_enable                       "false" //
+        citadel_use_pvs_for_players                            "true"  //
+        cl_bone_cache_optimization                             "1"     //
+        cl_phys_animated_hierarchy                             "false" //
+        cl_phys_networked_start_sleep                          "true"  //
+        cl_phys_sleep_enable                                   "true"  //
+        cl_ragdoll_default_scale                               "0"     //
+        con_enable                                             "true"  //
+        dsd_slow_cpu                                           "1"     //
+        dsp_volume                                             "0"     //
+        fx_drawmetalspark                                      "false" //
+        lb_allow_time_sliced_shadow_map_rendering              "false" //
+        lb_bin_slices                                          "0"     //
+        lb_csm_cross_fade_override                             "0"     //
+        lb_csm_distance_fade_override                          "0"     //
+        lb_csm_receiver_plane_depth_bias                       "0"     //
+        lb_csm_receiver_plane_depth_bias_transmissive_backface "0"     //
+        lb_cubemap_normalization_roughness_begin               "0.01"  //
+        lb_dynamic_shadow_penumbra                             "false" //
+        lb_dynamic_shadow_resolution_quantization              "8"     //
+        lb_enable_fog_mixed_shadows                            "false" //
+        lb_enable_lights                                       "0"     //
+        lb_enable_newsum                                       "false" //
+        lb_max_visible_barn_lights_override                    "1"     //
+        lb_mixed_shadows                                       "false" //
+        lb_precomputed_shadowmap_enable                        "false" //
+        lb_shadow_map_cull_empty_mixed                         "true"  //
+        lb_shadow_texture_height_override                      "16"    //
+        lb_shadow_texture_width_override                       "16"    //
+        mat_tonemap_bloom_scale                                "0"     //
+        minimap_update_rate_hz                                 "10"    //
+        nav_obstruction_async_update                           "true"  //
+        panorama_transition_time_factor                        "2"     //
+        phys_dynamic_scaling                                   "false" //
+        r_aoproxy_cull_dist                                    "0.01"  //
+        r_arealights                                           "false" //
+        r_character_decal_monitor_render_res                   "64"    //
+        r_citadel_depthoffield_enable                          "false" //
+        r_citadel_fog_quality                                  "0"     //
+        r_citadel_fsr_enable_mip_bias                          "false" //
+        r_citadel_shadowdb                                     "8"     //
+        r_citadel_ssao_denoise_passes                          "0"     //
+        r_citadel_ssao_radius                                  "0"     //
+        r_enable_cubemap_fog                                   "false" //
+        r_enable_gradient_fog                                  "false" //
+        r_enable_volume_fog                                    "false" //
+        r_hair_indirect_transmittance                          "false" //
+        r_hair_shadowtile                                      "false" //
+        r_haircull_percent                                     "100"   //
+        r_impacts_alt_orientation                              "false" //
+        r_late_particle_job_sync                               "1"     //
+        r_light_sensitivity_mode                               "true"  //
+        r_monitor_3dskybox                                     "0"     //
+        r_morphing_enabled                                     "false" //
+        r_muzzleflashbrightness                                "0.01"  //
+        r_ropetranslucent                                      "false" //
+        r_smooth_morph_normals                                 "0"     //
+        r_ssao_blur                                            "0"     //
+        r_texture_budget_dynamic                               "1"     //
+        r_texture_lod_scale                                    "8"     //
+        r_texture_nonstreaming_load                            "1"     //
+        r_texture_pool_reduce_rate                             "512"   //
+        r_texture_pool_size                                    "256"   //
+        r_texture_stream_max_resolution                        "128"   //
+        r_texture_stream_resolution_bias                       "0.01"  //
+        r_world_wind_frequency_grass                           "0"     //
+        r_world_wind_frequency_trees                           "0"     //
+        rope_collide                                           "0"     //
+        rope_smooth_enlarge                                    "0"     //
+        rope_smooth_maxalpha                                   "0"     //
+        rope_smooth_maxalphawidth                              "0"     //
+        rope_smooth_minalpha                                   "0"     //
+        rope_smooth_minwidth                                   "0"     //
+        rope_subdiv                                            "0"     //
+        rope_wind_dist                                         "0"     //
+        sc_aggregate_gpu_vis_culling                           "true"  //
+        sc_cache_envmap_lpv_lookup                             "true"  //
+        sc_clutter_density_full_size                           "0.5"   //
+        sc_clutter_density_none_size                           "1"     //
+        sc_disable_spotlight_shadows                           "1"     //
+        sc_dithered_lod_transition_amt                         "0"     //
+        sc_hdr_enabled_override                                "0"     //
+        sc_instanced_mesh_enable                               "false" //
+        sc_instanced_mesh_gpu_density_culling                  "false" //
+        sc_max_framebuffer_copies_per_layer                    "0"     //
+        skeleton_instance_lod_optimization                     "true"  //
+        snd_steamaudio_ir_duration                             "1.0"   //
+        snd_steamaudio_reverb_update_rate                      "10"    //
+        snd_use_baked_occlusion                                "1"     //
+        sparseshadowtree_disable_add_layers                    "false" //
+        steam_inputhandler_enabled                             "false" //
+        sv_hide_ent_in_pvs                                     "1"     //
+        sv_remove_ent_from_pvs                                 "1"     //
+        sv_waterdist                                           "0"     //
+        tv_enable_delta_frames                                 "false" //
+        update_voices_low_priority                             "true"  //
+        vis_sunlight_enable                                    "false" //
+        wind_system_default_resolution_xy                      "0"     //
+        wind_system_temporal_smoothing                         "false" //
+        citadel_hud_unit_indicators_v2_show_distance           "true"  //
 
 
 
@@ -1432,3 +1502,4 @@ GameInfo
         ShowLowAvailableVirtualMemoryMessageBox "1"
     }
 }
+

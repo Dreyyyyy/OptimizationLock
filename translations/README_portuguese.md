@@ -1,23 +1,16 @@
-Para solicitar suporte, ou, para contribuir com seus achados para o projeto, nosso servidor no Discord pode ser acessado [aqui](https://discord.gg/EF3Jq57jQv).  
-Caso queira fazer uma doação como forma de agradecimento eu tenho um Kofi aqui! https://ko-fi.com/sqooky
-
-**Doadores!**
-Eu amo muito todos vocês!
-- Soulx
-- Boot
-- Xeno
-- Sonny
+Para solicitar suporte, ou, para contribuir com seus achados para o projeto, nosso servidor no Discord pode ser acessado [aqui](https://discord.gg/EF3Jq57jQv).  (Apenas em inglês!!)
+Caso queira fazer uma doação como forma de agradecimento a Sqooky tem um Kofi aqui! https://ko-fi.com/sqooky
 
 <div>
-  <img src="https://github.com/Sqooky/OptimizationLock/blob/main/media/joy_brazil.png?raw=true" alt="Uma imagem que lẽ o seguinte: (No meio) Uma coletânea de configurações com a intenção de otimizar o jogo. (Em baixo) Ou, OptimizationLock v2. (No topo) Obrigada pela toneladas de downloads (40k no GB)!"/>
+  <img src="https://github.com/Sqooky/OptimizationLock/blob/main/media/joy_brazil.png?raw=true" alt="Uma imagem que lẽ o seguinte: (No meio) Uma coletânea de configurações com a intenção de otimizar o jogo. (Em baixo) Ou, OptimizationLock v2. (No topo) Obrigada pelos milhares de downloads (150k no GB)!"/>
 </div>
 
 # Instruções Básicas
 Para instalar, substitua a sua _gameinfo.gi_ em ``steamapps/common/deadlock/game/citadel`` com o arquivo baixado deste repositório.
-**Vídeo-Tutorial em inglês** sobre a instalação, disponível [aqui](https://youtu.be/TbjLbQVN2kE)
+**Vídeo-Tutorial em inglês** sobre a instalação, disponível [aqui](https://www.youtube.com/watch?v=N0iNRfxrjdQ&t)
 
 # Tabela
-Aqui vai uma lista de cada _config_ disponível neste repositório.
+Abaixo há uma lista de cada _config_ disponível neste repositório.
 | Arquivo de config                                                                                                                     | Propósito                                                                                                              |
 |---------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
 | [Sqooky's Config/Optimizationlock Default](https://github.com/Sqooky/OptimizationLock/blob/main/Sqooky's%20.gi/gameinfo.gi)                                    | Focada no desempenho, tentando não deixar o jogo feio. Recomendada para a maioria.                                                    |
@@ -94,10 +87,99 @@ Meus agradecimentos sinceros a todos esses indivíduos. São todos adoráveis.
 - Piggy:                Me deixou espelhar sua config;  
 - Soulx:                Me deu cinco dólares e me contou sobre espironolactona (muito foda, te amo);
 - Tamara Mochaccina:    Contribuiu com o ajuste de mira da Vindicta e ajuste da névoa.  
+- RoseyLemonz: Removeu cvars duplicadas.
+- Laund: Muito, muito útil e super duper legal, e, me ajudou fazendo coisas pra ajudar no fluxo de trabalho.
 
+**Doadores!**
+Eu amo muito todos vocês! 
+
+(Nota do editor: Removi os agradecimentos porque eu não conseguiria transmitir o mesmo sentimento de Sqooky, então, vá no readme original para ver <3);
+- Boot
+- Sonny
+- Soulx
+- Xeno
+- N8Fan
+- Cos
+- Wely
+- Prot4g
+- catmasta
+- a distant admirer
+- Namea
+- Kevin
+- jusbeprophet
+- Supporter:
+- WhoLovesDean
+- john6674
+- noelle
+- exazinho
+- TheLastFriendly
+- Olly/Moozen
+- Neytir
+- Bytenode
+- John Dreamerman
+- Martinchodou
+- HaloKat/June
+- 6Daves
+- Ehmed
+- NawyLo3b
+- leroyaxrs
+- eleanordl
+- LokiSquared
+- Mr. Miyagi
+- Connermadethis
+- Noelle
+- Blerg
+- Drykdap
+- Salem
+- attention seeker
+- DungeonMaestro:
+- Smugfox:
+- TheTurtlezsz
+- Supporter
+- Umah:
+- Supporter
+- TheTurtlezsz
+- Smugfox64
+- DungeonMaestro
+- cele
+- faux_astre
+- MidnightSojuTv
+- blert
+- Shinjoto
+- Yawn
+- TurtleBoy
+- Supporter
+- Ludo
+- odie
+- sixsav
+- Yawn
+- salvator
+- CHANG
+- Shotty
+- maeaissance
+- sae sushio
+- dec
+- onetapman
+- Habitus
+- max
+- bingbinginc
+- aeyri
+- Supporter
+- soulx
+- Supporter
+- NSH
+- crush
+- Jill
+- Stable
+- Supporter
+- Isabellawa
+- nostmau
+- NicanorGordon
+- Harry
 
 ## Pessoas legais que conheci por este projeto e as quais quero agradecer por serem elas mesmas.
 - 6Daves
+- Achira
 - anartoast
 - Boot
 - GoreDaughter
@@ -109,9 +191,6 @@ Meus agradecimentos sinceros a todos esses indivíduos. São todos adoráveis.
 - Masteroms
 - PeachCebo
 - Tamara Mochaccina
-- Soulx
-- Piggy
-- Chatbaran
 - E você, obrigada por usar esse projeto e fazer o meu dia <3. Se cuidem, por favor.
 
 ## Pessoas incríveis que disponibilizaram suas capturas de tela para mim <33333
@@ -119,7 +198,7 @@ Meus agradecimentos sinceros a todos esses indivíduos. São todos adoráveis.
 - Dirtkiller23/Aricole
 - Thai
 - Boot
-- Lina 🜏
+- lina Ø
 
 
 # Anúncio super importante
@@ -127,3 +206,4 @@ Em uma atualização passada, houve uma alteração no arquivo citadel_main_engl
 Dito isso, é possível que no futuro a Valve implemente essa mudança por completo, restringindo assim o uso de variáveis ​​de console no jogo. Até que isso aconteça (e muito provavelmente depois que acontecer), irei continuar trabalhando neste projeto.
 
 Até lá você pode considerar fazer um [post no fórum](https://forums.playdeadlock.com/) dizendo "saaaaaalve, acho que não vou poder jogar o jogo acima de 60fps se as convars forem completamente bloqueadas" já que é a forma mais direta de providenciar feedback para os devs.
+

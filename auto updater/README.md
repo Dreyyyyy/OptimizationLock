@@ -72,14 +72,14 @@ Output:
 ```
 Available configs (use with --config <name>):
 
-  sqooky    Sqooky's OptimizationLock (recommended)
-             https://raw.githubusercontent.com/Sqooky/OptimizationLock/main/Sqooky%27s%20.gi/gameinfo.gi
-
-  boot      Boot's Maximum FPS
-  kaiz      Kaizuchaneru's Minimum Spec
-  test      Test_Cfg (Sqooky experimental)
-  piggy     Piggy's Config (comparatively outdated)
-  clean     Clean / Near-Vanilla
+  
+    sqooky            Sqooky's OptimizationLock (recommended)
+    performance       Sqooky's Max FPS config (best performance)
+    boot              Boot's Maximum FPS
+    kaiz              Kaizuchaneru's Minimum Spec
+    piggy             Piggy's Config
+    eskay             Eskay's modified fork of Sqooky's
+    clean             Clean / Near-Vanilla
 ```
 
 ---

@@ -1265,7 +1265,6 @@ GameInfo
         minimap_update_rate_hz                                 "10"    //
         nav_obstruction_async_update                           "true"  //
         panorama_transition_time_factor                        "2"     //
-        phys_dynamic_scaling                                   "false" //
         r_aoproxy_cull_dist                                    "0.01"  //
         r_arealights                                           "false" //
         r_character_decal_monitor_render_res                   "64"    //

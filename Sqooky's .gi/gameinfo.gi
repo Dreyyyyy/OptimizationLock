@@ -13,7 +13,11 @@
 //         /!#%|'-_- '\%k*|
 //     o   |*@/        \_/
 //         \)&|
-// OptimizationLock Ver. 3.5.3 by Sqooky with help from others <3
+// OptimizationLock Ver. 3.6 by Sqooky with help from others <3
+
+// Launch Options
+// Pleas experiemnt with -dx11 or -vulkan
+// -nojoy -nosteamcontroller -nohltv -particles 1  -softparticlesdefaultoff -particle_disable_diffuse
 
 // As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more
 //  Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
@@ -756,7 +760,7 @@ GameInfo
         //      If you would like to donate as a means of showing thanks I have a kofi.     \\
         //      https://ko-fi.com/sqooky                                                    \\
 
-        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 3.5.3 -------- \\
+        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 3.6 -------- \\
         // The github is here https://github.com/Sqooky/OptimizationLock  \\
         // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
         // The gamebanana:https://gamebanana.com/mods/656341 (it's usually behind, please check the github) \\
@@ -767,7 +771,8 @@ GameInfo
         // ================ Preferences ================
         // --- 0. IMPORTANT ---
         // mm_prefer_solo_only                   "true"  // If I understand what this command does, this command controls whether or not you are matched with other solo queue players. For me this dramatically improved the solo queue performance but I am not sure if that is placebo. [def: "false"]
-        citadel_camera_use_vmdl_flatten_vertical      "false" // Setting this command to false should improve responsiveness of mouse input but makes Rem, Venator, AND ESPICIALLY RAT KING's cameras move downwards when aiming down scope. Not exactly a dealbreaker but might be undesirable for some.                                                                                                                                      [def: "true"]
+        // citadel_in_world_item_panel_dpi        "0"    // This controls the quality of the text above soul pickups, so boxes, golden statues, and soul orbs. Higher values mean better quality, lower means worse. [def: "2"]
+        citadel_camera_use_vmdl_flatten_vertical      "true"  // Setting this command to false should improve responsiveness of mouse input but makes Rem, Venator, AND ESPICIALLY RAT KING's cameras move downwards when aiming down scope. Not exactly a dealbreaker but might be undesirable for some.                                                                                                                                      [def: "true"]
         citadel_per_weapon_per_surface_impact_effects "false" // Reduces the visuals for bullet tracers. This will disable the radius of yamato right click. [def: "true"]
         citadel_portrait_world_renderer_off           "false" // Disables character models in shop and endgame screen                                            [def: "false"]
         citadel_trooper_glow_disabled                 "1"     // 1 = Disable friendly/enemy minion glow.                                                         [def: "0"]
@@ -779,32 +784,27 @@ GameInfo
         r_size_cull_threshold                         "0.9"   // This will control the distance trooper healthbars and boxes stop rendering *Culls small objects sooner based on screen size threshold (higher = more culling). [def: "0.8"]
         sc_screen_size_lod_scale_override             "0.55"  // Controls LOD scale. Lower values will make sinners and playermodels look worse "my sinner's lights are little triangles" [def: "-1"]
         steam_inputhandler_enabled                    "true"  // This disables controller support when set to false. Setting to false should improve performance if you're not on a steam deck, but some people are, and I don't want an influx of "why no work with controller"  [def: "true"]
-        // citadel_in_world_item_panel_dpi        "0"    // This controls the quality of the text above soul pickups, so boxes, golden statues, and soul orbs. Higher values mean better quality, lower means worse. [def: "2"]
 
         // --- Render Distance ---
         r_farz       "7000" // This controls the far clipping plane, ie building/player popin   [def: "-1"]
         r_mapextents "7000" // Far clipping plane, this will make buildings pop in and out      [def: "16384"]
 
-        // --- Health Bar Minor Tweaks ---
+        // --- Enemy Health Bar Minor Tweaks ---
         // citadel_unit_status_delta_decay_delay   "0"   // The delay between doing damage and havin the yellow damage indicator appear [def: "0.5"]
         // citadel_unit_status_delta_decay_rate    "10"  // How quickly the yellow "you're dealing damage" indicator fades [def: "0.5"]
         // citadel_unit_status_recent_damage_time  "inf" // how long to show someone's numerical health value when you shoot them. Inf means infinite, but will cause the healthbar to jiggle/shake forever. [def: "0.25"]
 
-
-
         // --- 1. Outlines ---
-        citadel_boss_glow_disabled                             "1"    // Disables boss and walker glow/highlight effect.                  [def: "0]
-        citadel_damage_offscreen_indicator_disabled            "true" // The little trooper portraits that show up behind walls.          [def: "true"]
-        citadel_unit_status_allies_see_thru_walls              "true" // Do you want to see allied player outlines through walls          [def: "true"]
-        citadel_unit_status_allies_see_thru_walls_max_distance "40"   // How far to make allied players' unit status show through walls.  [def: "0"] (0 means no limit)
-        citadel_unit_status_dpi                                "10"   // This increases the size of the health bar. Unfortunately I think this lowers performance. A shame. [def: "10"]
+        citadel_boss_glow_disabled                  "1"    // Disables boss and walker glow/highlight effect.                  [def: "0]
+        citadel_damage_offscreen_indicator_disabled "true" // The little trooper portraits that show up behind walls.          [def: "true"]
+        citadel_unit_status_allies_see_thru_walls   "true" // Do you want to see allied player outlines through walls          [def: "true"]
 
         // --- 2. Field of View ---
         // r_aspectratio changes the zoom of the camera which in turn doesn't make the punch zoom in as jarring, but the command is not as intuitive to set precisely
         r_aspectratio "2.5" // 1.75=80fov | 2.15=90fov | 2.49=100fov (every .15 interval = 5 fov).
 
         // --- 3. HUD ---
-        citadel_unit_status_stamina_low_pips            "7"     // below this threshold stamina is permanantly visble [def: "3"]
+        // panorama_render_target_cache_max_size        "134217728" // This should increase the panorama cache size by 4x, needs more testing                       [def: "31457280"]
         citadel_damage_report_enable                    "1"     // Enables/Disables incoming/outgoing damage tab (tuning this off is very questionable but okay). [def: "1"]
         citadel_damage_text_batching_window_ability     "1000"  // How long to wait until batching damage text.
         citadel_distance_mouse_move_for_minimap_drawing "1"     // this command makes drawing on the minimap more precise so you can actually doodle on it :D makes me happy [def: "15"]
@@ -812,18 +812,17 @@ GameInfo
         citadel_hideout_ball_show_juggle_fx             "1"     // Shows juggle visual FX for hideout ball minigame.                [def: "0"]
         citadel_hud_objective_health_debug_show_midboss "false" // This makes midboss' health bar visible whenever it's able to be rendered. I like it, you might not [def: "false"]
         citadel_hud_objective_health_enabled            "2"     // 0=Off, 1=Shrines, 2=T1/T2, 3=Barracks.                           [def: "2"]
+        citadel_minimap_trooper_size                    "2"     // The size of the white dots that are troopers on the minimap [def: "3"]
+        citadel_show_minimap_reveal_indicators          "true"  // idk yet
+        citadel_show_old_neutral_camp_icons             "false" // idk yet
         citadel_unit_status_old_update_rate             "15"    // How frequently health bars can update. Lowering it should improve performance    [def: "30"]
         citadel_unit_status_single_bar_mode             "false" // This makes the v2 halth bar be one bar as opposed to multiple, which I find more easily readable [def: "false"]
-        v8_maximum_heap_size_mb                         "1024"  // This should double the amount of cache used by the ingame hud, so less stutter! Yay!
+        citadel_unit_status_stamina_low_pips            "7"     // below this threshold stamina is permanantly visble [def: "3"]
+        minimap_trooper_update_rate_hz                  "2"     // How many times a second the icons for troopers are updated on the minimap [def: "5"]
         panorama_comp_layer_lru_lifetime                "4"     // This should keep panorama caches loaded for longer so the game can use them more frequently. [def: "1"]
-        // panorama_render_target_cache_max_size        "134217728" // This should increase the panorama cache size by 4x, needs more testing                       [def: "31457280"]
-
-        // --- 3.1 Uncomment These Commands if You Want to Have The Chat Wheel Not Show Up When Pinging ---
-        // citadel_show_chat_wheel_angle_threshold         "30"    // (degrees) Increase this to change how much you have to move your camera angle to make the Chat Wheel instantly visible while holding Ping. [def: "16"]
-        // citadel_show_chat_wheel_time                    "15"    //
+        v8_maximum_heap_size_mb                         "1024"  // This should double the amount of cache used by the ingame hud, so less stutter! Yay!
 
         // --- 4. Lighting & Shadows ---
-        lb_enable_baked_shadows     "false" // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
         lb_enable_stationary_lights "false" // *Disables stationary lights (map looks flatter but more performant).         [def: "1"]
 
 
@@ -833,11 +832,12 @@ GameInfo
         panorama_max_overlay_fps                   "30"    // Fps In the settings/esc menu.                                    [def: "60"]
 
         // --- 6. Camera Tweaks ---
-        citadel_melee_shake_duration                "0"
+        // citadel_camera_listening_offset    "-1"   // To be completely honest I have no idea but I want to test this.  [def: "0"]
         citadel_camera_soft_collision_angle         "75"    //                                                                  [def: "75"]
         citadel_camera_use_vmdl_flatten_horizontal  "false" // From my understanding of how these commands work, they slightly smooth camera inputs. This should make the camera more responsive?   [def: "true"]
         citadel_camera_wobble_disable               "true"  // I believe this disables the camera wobble when heavy melee'd or talking walker/guardian damage. I like it
         citadel_melee_shake_amplitude               "0"     // I believe this properly disables the camera shake on heavy melee                 [def: 0.55]
+        citadel_melee_shake_duration                "0"     // I believe this properly disables the camera shake on heavy melee                 [def: 0.55]
         engine_accurate_input_processing_delta_time "true"  // When true, elapsed time given to the input processing will be the time elapsed since the last input processing. This is only relevant when input is processed multiple times per frame ( i.e. multiple ticks per frame) [def: false]
         r_citadel_clip_sphere_min_opacity           "0"     // Removes the blur from the pinhole camera                         [def: "40"]
 
@@ -877,7 +877,7 @@ GameInfo
 
         // ================= UI ================
         //panorama_disable_box_shadow "true"  // Disables UI box shadows in the UI (less GPU/UI cost).            [def: "false"] // This will make the hitmarker yellow instead of yellow with a red outline
-        citadel_unit_status_healthbar_highlight_speed "100"   //                       [def: "2"]
+        citadel_unit_status_healthbar_highlight_speed "999"   // Removes interpolation of the health bar when healing and taking damage. This will give a marginally more accurate display of your health the higher you set it.                      [def: "2"]
         closecaption                                  "false" // I assume this does what it says on the tin                       [def: "false"]
         panorama_allow_transitions                    "false" // Turns off UI anim (shop,etc)                                     [def: "1"]
         panorama_disable_blur                         "true"  // Disables UI blur effects in the UI.                              [def: "false"]
@@ -985,10 +985,10 @@ GameInfo
         r_world_wind_strength                    "0"       // Disables wind effects, cosmetic only.                            [def: "40"]
 
         // ================ Lod & Culling ================
-        // sc_instanced_mesh_size_cull_bias       "10"    // Bias for size culling of instanced meshes                        [def: "1.5"]
-        //mat_viewportscale                       "0.01"  // Scale down the main viewport I belive this gets overwritten by video.txt [def: "1"]
-        //sc_instanced_mesh_lod_bias              "0.001"  // Bias for LOD selection of instanced mesh                         [def: "1.25"]
-        //sc_instanced_mesh_lod_bias_shadow       "0.001"  // Bias for LOD selection of instanced meshes in shadowmaps         [def: "1.75"]
+        // sc_instanced_mesh_size_cull_bias     "10"    // Bias for size culling of instanced meshes                        [def: "1.5"]
+        //mat_viewportscale                     "0.01"  // Scale down the main viewport I belive this gets overwritten by video.txt [def: "1"]
+        //sc_instanced_mesh_lod_bias            "0.001" // Bias for LOD selection of instanced mesh                         [def: "1.25"]
+        //sc_instanced_mesh_lod_bias_shadow     "0.001" // Bias for LOD selection of instanced meshes in shadowmaps         [def: "1.75"]
         phys_cull_internal_mesh_contacts        "true"  // Don't simulate the bones inside of a mesh.                       [def: "false"]
         sc_aggregate_bvh_threshold              "256"   // Not fully sure what these do. Don't change them.                 [def: "128"]
         sc_allow_dithered_lod                   "false" // Pretty sure this just turns dithering off for when switching between lods. Isn't a big deal [def: "true"]
@@ -1122,6 +1122,8 @@ GameInfo
 
 
         // ================ Convars You Shouldn't/Can't Mess With But I Want to Maintain the Documentation ================
+        // lb_enable_baked_shadows                  "false" // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
+        // phys_dynamic_scaling                     "false" // Makes it so that you can't shoot holiday barrels
         // ai_disable                               "1"             // Both of these commands disable creep animations which means that neutrals and guardians won't move [def: "0"]
         // ai_disabled                              "1"             // [def: "0"]
         // cam_idealdist                            "0"
@@ -1183,7 +1185,7 @@ GameInfo
         fog_enableskybox         "false" // I doubt the fog commands actually are modifiable but I am maintaining their inclusion for posterity
         volume_fog_enable_jitter "false" // Don't think I can
 
-        // --------------------------------- END OF CONFIG OptimizationLock -- ver. 3.5.3 ------------------------------- \\
+        // --------------------------------- END OF CONFIG OptimizationLock -- ver. 3.6 ------------------------------- \\
 
 
         // ====================== SV commands we cannot change but I want to maintain documentation for ======================
@@ -1213,37 +1215,41 @@ GameInfo
         // ====================== Testing Version Commands ======================
         // r_fallback_texture_lod_scale                           "8"
         // r_propsmaxdist                                         "600"
-        ai_async_queue_max_jobs                                "1"     //
-        ai_foot_sweep_enable                                   "false" //
-        ai_gather_conditions_async                             "true"  //
-        ai_lod_auto_enabled                                    "true"  //
-        ai_strong_optimizations_no_checkstand                  "1"     //
-        ai_think_interval                                      "0.3"   //
-        ai_think_interval_lod_low                              "1"     //
-        ai_think_interval_lod_med                              "0.4"   //
-        ai_think_interval_lod_very_low                         "2"     //
-        ai_use_async_ragdoll_fixup                             "true"  //
-        animgraph_enable_dirty_netvar_optimization             "true"  //
-        citadel_damage_indicator_height                        "10"    //
-        citadel_damage_indicator_radius                        "1"     //
-        citadel_damage_indicator_width                         "10"    //
-        citadel_enable_new_ping_particle                       "true"  //
-        citadel_fibonnaci_sphere_trace_los_max                 "80"    //
-        citadel_hud_objective_health_idle_timeout              "0"     //
-        citadel_minimap_overlap_scan_distance                  "0"     //
-        citadel_orb_debug_draw_state                           "1"     //
-        citadel_player_outline_enemies                         "false" //
-        citadel_portrait_unit_ag2_enable                       "false" //
-        citadel_use_pvs_for_players                            "true"  //
-        cl_bone_cache_optimization                             "1"     //
-        cl_phys_animated_hierarchy                             "false" //
-        cl_phys_networked_start_sleep                          "true"  //
-        cl_phys_sleep_enable                                   "true"  //
-        cl_ragdoll_default_scale                               "0"     //
-        con_enable                                             "true"  //
-        dsd_slow_cpu                                           "1"     //
-        dsp_volume                                             "0"     //
-        fx_drawmetalspark                                      "false" //
+
+        // ================ ai_ Commands ================
+        // Not certain if these actually improve performance but they aren't replicated or unable to be overwritten
+        ai_async_queue_max_jobs               "1"     //
+        ai_foot_sweep_enable                  "false" //
+        ai_gather_conditions_async            "true"  //
+        ai_lod_auto_enabled                   "true"  //
+        ai_strong_optimizations_no_checkstand "1"     //
+        ai_think_interval                     "0.3"   //
+        ai_think_interval_lod_low             "1"     //
+        ai_think_interval_lod_med             "0.4"   //
+        ai_think_interval_lod_very_low        "2"     //
+        ai_use_async_ragdoll_fixup            "true"  //
+
+        // ================ citadel_ Commands ================
+        citadel_damage_indicator_height           "10"    //
+        citadel_damage_indicator_radius           "1"     //
+        citadel_damage_indicator_width            "10"    //
+        citadel_enable_new_ping_particle          "true"  //
+        citadel_fibonnaci_sphere_trace_los_max    "80"    //
+        citadel_hud_objective_health_idle_timeout "0"     //
+        citadel_minimap_overlap_scan_distance     "0"     //
+        citadel_orb_debug_draw_state              "1"     //
+        citadel_player_outline_enemies            "false" //
+        citadel_portrait_unit_ag2_enable          "false" //
+        citadel_use_pvs_for_players               "true"  //
+
+        // ================ cl_ Commands ================
+        cl_bone_cache_optimization    "1"     //
+        cl_phys_animated_hierarchy    "false" //
+        cl_phys_networked_start_sleep "true"  //
+        cl_phys_sleep_enable          "true"  //
+        cl_ragdoll_default_scale      "0"     //
+
+        // ================ lb_ Commands ================
         lb_allow_time_sliced_shadow_map_rendering              "false" //
         lb_bin_slices                                          "0"     //
         lb_csm_cross_fade_override                             "0"     //
@@ -1262,76 +1268,89 @@ GameInfo
         lb_shadow_map_cull_empty_mixed                         "true"  //
         lb_shadow_texture_height_override                      "16"    //
         lb_shadow_texture_width_override                       "16"    //
-        mat_tonemap_bloom_scale                                "0"     //
-        minimap_update_rate_hz                                 "10"    //
-        nav_obstruction_async_update                           "true"  //
-        panorama_transition_time_factor                        "2"     //
-        r_aoproxy_cull_dist                                    "0.01"  //
-        r_arealights                                           "false" //
-        r_character_decal_monitor_render_res                   "64"    //
-        r_citadel_depthoffield_enable                          "false" //
-        r_citadel_fog_quality                                  "0"     //
-        r_citadel_fsr_enable_mip_bias                          "false" //
-        r_citadel_shadowdb                                     "8"     //
-        r_citadel_ssao_denoise_passes                          "0"     //
-        r_citadel_ssao_radius                                  "0"     //
-        r_enable_cubemap_fog                                   "false" //
-        r_enable_gradient_fog                                  "false" //
-        r_enable_volume_fog                                    "false" //
-        r_hair_indirect_transmittance                          "false" //
-        r_hair_shadowtile                                      "false" //
-        r_haircull_percent                                     "100"   //
-        r_impacts_alt_orientation                              "false" //
-        r_late_particle_job_sync                               "1"     //
-        r_light_sensitivity_mode                               "true"  //
-        r_monitor_3dskybox                                     "0"     //
-        r_morphing_enabled                                     "false" //
-        r_muzzleflashbrightness                                "0.01"  //
-        r_ropetranslucent                                      "false" //
-        r_smooth_morph_normals                                 "0"     //
-        r_ssao_blur                                            "0"     //
-        r_texture_budget_dynamic                               "1"     //
-        r_texture_lod_scale                                    "8"     //
-        r_texture_nonstreaming_load                            "1"     //
-        r_texture_pool_reduce_rate                             "512"   //
-        r_texture_pool_size                                    "256"   //
-        r_texture_stream_max_resolution                        "128"   //
-        r_texture_stream_resolution_bias                       "0.01"  //
-        r_world_wind_frequency_grass                           "0"     //
-        r_world_wind_frequency_trees                           "0"     //
-        rope_collide                                           "0"     //
-        rope_smooth_enlarge                                    "0"     //
-        rope_smooth_maxalpha                                   "0"     //
-        rope_smooth_maxalphawidth                              "0"     //
-        rope_smooth_minalpha                                   "0"     //
-        rope_smooth_minwidth                                   "0"     //
-        rope_subdiv                                            "0"     //
-        rope_wind_dist                                         "0"     //
-        sc_aggregate_gpu_vis_culling                           "true"  //
-        sc_cache_envmap_lpv_lookup                             "true"  //
-        sc_clutter_density_full_size                           "0.5"   //
-        sc_clutter_density_none_size                           "1"     //
-        sc_disable_spotlight_shadows                           "1"     //
-        sc_dithered_lod_transition_amt                         "0"     //
-        sc_hdr_enabled_override                                "0"     //
-        sc_instanced_mesh_enable                               "false" //
-        sc_instanced_mesh_gpu_density_culling                  "false" //
-        sc_max_framebuffer_copies_per_layer                    "0"     //
-        skeleton_instance_lod_optimization                     "true"  //
-        snd_steamaudio_ir_duration                             "1.0"   //
-        snd_steamaudio_reverb_update_rate                      "10"    //
-        snd_use_baked_occlusion                                "1"     //
-        sparseshadowtree_disable_add_layers                    "false" //
-        steam_inputhandler_enabled                             "false" //
-        sv_hide_ent_in_pvs                                     "1"     //
-        sv_remove_ent_from_pvs                                 "1"     //
-        sv_waterdist                                           "0"     //
-        tv_enable_delta_frames                                 "false" //
-        update_voices_low_priority                             "true"  //
-        vis_sunlight_enable                                    "false" //
-        wind_system_default_resolution_xy                      "0"     //
-        wind_system_temporal_smoothing                         "false" //
-        citadel_hud_unit_indicators_v2_show_distance           "true"  //
+
+        // ================ r_ Commands ================
+        r_aoproxy_cull_dist                  "0.01"  //
+        r_arealights                         "false" //
+        r_character_decal_monitor_render_res "64"    //
+        r_citadel_depthoffield_enable        "false" //
+        r_citadel_fog_quality                "0"     //
+        r_citadel_fsr_enable_mip_bias        "false" //
+        r_citadel_shadowdb                   "8"     //
+        r_citadel_ssao_denoise_passes        "0"     //
+        r_citadel_ssao_radius                "0"     //
+        r_enable_cubemap_fog                 "false" //
+        r_enable_gradient_fog                "false" //
+        r_enable_volume_fog                  "false" //
+        r_hair_indirect_transmittance        "false" //
+        r_hair_shadowtile                    "false" //
+        r_haircull_percent                   "100"   //
+        r_impacts_alt_orientation            "false" //
+        r_late_particle_job_sync             "1"     //
+        r_light_sensitivity_mode             "true"  //
+        r_monitor_3dskybox                   "0"     //
+        r_morphing_enabled                   "false" //
+        r_muzzleflashbrightness              "0.01"  //
+        r_ropetranslucent                    "false" //
+        r_smooth_morph_normals               "0"     //
+        r_ssao_blur                          "0"     //
+        r_texture_budget_dynamic             "1"     //
+        r_texture_lod_scale                  "8"     //
+        r_texture_nonstreaming_load          "1"     //
+        r_texture_pool_reduce_rate           "512"   //
+        r_texture_pool_size                  "256"   //
+        r_texture_stream_max_resolution      "128"   //
+        r_texture_stream_resolution_bias     "0.01"  //
+        r_world_wind_frequency_grass         "0"     //
+        r_world_wind_frequency_trees         "0"     //
+
+        // ================ rope_ Commands ================
+        rope_collide              "0" //
+        rope_smooth_enlarge       "0" //
+        rope_smooth_maxalpha      "0" //
+        rope_smooth_maxalphawidth "0" //
+        rope_smooth_minalpha      "0" //
+        rope_smooth_minwidth      "0" //
+        rope_subdiv               "0" //
+        rope_wind_dist            "0" //
+
+        // ================ sc_ Commands ================
+        sc_aggregate_gpu_vis_culling          "true"  //
+        sc_cache_envmap_lpv_lookup            "true"  //
+        sc_clutter_density_full_size          "0.5"   //
+        sc_clutter_density_none_size          "1"     //
+        sc_disable_spotlight_shadows          "1"     //
+        sc_dithered_lod_transition_amt        "0"     //
+        sc_hdr_enabled_override               "0"     //
+        sc_instanced_mesh_enable              "false" //
+        sc_instanced_mesh_gpu_density_culling "false" //
+        sc_max_framebuffer_copies_per_layer   "0"     //
+
+        // ================ Misc Testing Commands ================
+        animgraph_enable_dirty_netvar_optimization   "true"  //
+        citadel_hud_unit_indicators_v2_show_distance "true"  //
+        con_enable                                   "true"  //
+        dsd_slow_cpu                                 "1"     //
+        dsp_volume                                   "0"     //
+        fx_drawmetalspark                            "false" //
+        mat_tonemap_bloom_scale                      "0"     //
+        minimap_update_rate_hz                       "10"    //
+        nav_obstruction_async_update                 "true"  //
+        panorama_transition_time_factor              "2"     //
+        skeleton_instance_lod_optimization           "true"  //
+        snd_steamaudio_ir_duration                   "1.0"   //
+        snd_steamaudio_reverb_update_rate            "10"    //
+        snd_use_baked_occlusion                      "1"     //
+        sparseshadowtree_disable_add_layers          "false" //
+        steam_inputhandler_enabled                   "false" //
+        sv_hide_ent_in_pvs                           "1"     //
+        sv_remove_ent_from_pvs                       "1"     //
+        sv_waterdist                                 "0"     //
+        tv_enable_delta_frames                       "false" //
+        update_voices_low_priority                   "true"  //
+        vis_sunlight_enable                          "false" //
+        wind_system_default_resolution_xy            "0"     //
+        wind_system_temporal_smoothing               "false" //
 
 
 

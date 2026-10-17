@@ -35,10 +35,11 @@ DEFAULT_REF = "main"
 # name -> (description, path in repo)
 CONFIGS: Dict[str, Tuple[str, str]] = {
     "sqooky": ("Sqooky's OptimizationLock (recommended)", "Sqooky's .gi/gameinfo.gi"),
+    "performance":   ("Sqooky's Max FPS config (best performance)", "maximumfps or minimum spec config and resources here/gameinfo.gi"),
     "boot":   ("Boot's Maximum FPS", "boot's maxium fps config/gameinfo.gi"), # "maxium" minor spelling error !!1!
     "kaiz":   ("Kaizuchaneru's Minimum Spec", "kaizuchanerus minimum spec/gameinfo.gi"),
-    "test":   ("Test_Cfg (Sqooky experimental)", "test_cfg/gameinfo.gi"),
-    "piggy":  ("Piggy's Config (comparatively outdated)", "piggy's config (comparatively outdated)/gameinfo.gi"),
+    "piggy":  ("Piggy's Config", "Piggy's config/gameinfo.gi"),
+    "eskay": ("Eskay's modified fork of Sqooky's", "Eskay's config/gameinfo.gi"),
     "clean":  ("Clean / Near-Vanilla", "clean gameinfo.gi/gameinfo.gi"),
 }
 

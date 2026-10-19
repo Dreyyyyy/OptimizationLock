@@ -1,0 +1,12 @@
+on:
+  pull_request:
+    paths: ['**/*.gi']
+jobs:
+  fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo install --git https://github.com/imkunet/vdf-fmt
+      - run: git ls-files -z -- '*.gi' | xargs -0 vdf-fmt -w
+      - run: git diff --exit-code

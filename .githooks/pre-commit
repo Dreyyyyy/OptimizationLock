@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+mapfile -d '' f < <(git diff --cached --name-only --diff-filter=ACM -z -- '*.gi')
+[ ${#f[@]} -eq 0 ] && exit 0
+vdf-fmt -w "${f[@]}" && git add -- "${f[@]}"

@@ -202,7 +202,7 @@ As much as I would love to say I did this alone, I did not. These are the amazin
 - Kaizuchaneru: While not directly invovled in the deveopment, they tested most cvars.
 - Tamara Mochaccina: Contributed vindicta scope fix and the fog fix.
 - RoseyLemonz: Removed duplicate cvars
-- Laund: Very very helpful, super duper nice, and helped me with making stuff to improve the workflow.
+- Laund: Very very helpful, super duper nice, and helped me with making stuff to improve the workflow. Made the "clutter be gone" mod that is included in this.
 
 ## Donors
 
@@ -306,6 +306,7 @@ As much as I would love to say I did this alone, I did not. These are the amazin
 
 ## Misc
 
+- Phoriah: Had a wonderful solution to automatic formatting which is amazing.
 - Artemon121: Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game.
 - Dacooder: Contributed one fix, copied the config, distributed it as his own, and when I asked why he removed accredition despite previously calling me "the brains of the project" called me a harasser and proceeded to make two videos and a google doc exposing me. Honestly that made my day.
 - Kin: Did an insane amount of benchmarking unprompted.

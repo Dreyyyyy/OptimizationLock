@@ -8,6 +8,10 @@ The deafault file is "all" which just includes all of the files
 3. City Ambient: Removes ambient particles in the city, like steam, smoke, street lights, crows, candle flames.
 4. Walker: Removes most of the Walkers particles, keeping only some which are necessary to see the attacks. A bit experimental
 5. Clean Doorway: first made by Aurum this just disables the particle around The Doorman's doors which should help with performance.
+6. Movement
+Removes movement particles (dash, double jump, etc)
+7. Pickups
+Removes pickup particles/beams (souls, buffs)
 
 ### Credits  
 Laund (made it)

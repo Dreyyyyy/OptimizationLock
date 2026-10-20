@@ -33,7 +33,10 @@ Translated by [ZHTodd223](https://github.com/ZHTodd223)
 Translated by [Sasha11711](https://gamebanana.com/members/4167224)
 
 ### [🇭🇺Instrukciók magyarul itt](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_hungarian.md)
+Unfinished rn
 
+### [🇹🇷 Türkçe talimatlar burada](https://github.com/Sqooky/OptimizationLock/blob/main/translations/README_turkish.md)
+[corpse2mor](https://steamcommunity.com/profiles/76561198892952457/) Tarafından Çevrildi.
 
 ## Main body
 

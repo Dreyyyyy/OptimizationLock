@@ -13,7 +13,7 @@
 //         /!#%|'-_- '\%k*|
 //     o   |*@/        \_/
 //         \)&|
-// OptimizationLock Ver. 3.6 by Sqooky with help from others <3
+// OptimizationLock Ver. 3.6.1 by Sqooky with help from others <3
 
 // Launch Options
 // Pleas experiemnt with -dx11 or -vulkan
@@ -172,7 +172,7 @@ GameInfo
     tonemapping "0"
     GameData    "citadel.fgd"
 
-    PGIVersion "39A735A413003C88A806B364C32DFC6D077E551B9E4EC6C7B11D41E8E67BFA0C"
+    PGIVersion "48C04ECAFC6448F8D3F41F0AA3A15D065501751CF45FBE32DF6CB951BC4F7F6E"
 
     Localize
     {
@@ -421,8 +421,8 @@ GameInfo
 
     ResourceCompiler
     {
-
         ForceVulkanForMapBuild "1"
+
         // Overrides of the default builders as specified in code, this controls which map builder steps
         // will be run when resource compiler is run for a map without specifiying any specific map builder
         // steps. Additionally this controls which builders are displayed in the hammer build dialog.
@@ -466,11 +466,19 @@ GameInfo
             AggregateInstancingMeshlets        "1"
             BakePropsWithExtraVertexStreams    "1"
             MergeTranslucents                  "1"
+
+            // Precomputed static shadowmaps for fog
+            BakePrecomputedShadows                     "1"
+            BakePrecomputedShadowsForDirectionalLights "0"
+            BakePrecomputedDepthPyramids               "0"
+            PrecomputedShadowmapAtlas                  "1" // so precomputed shadows work without bindless (dx11)
+            PrecomputedShadowmapAtlasBorder            "1"
+            PrecomputedShadowmapResolutionDefault      "0" // should match SceneSystem/FogCachedShadowTileSizeTools [def: "128"]
         }
 
         BakedLighting
         {
-            Version                          "4"
+            Version                          "5"
             ImportanceVolumeTransitionRegion "512" // distance we transition from high to low resolution charts
             LightmapChannels
             {
@@ -478,17 +486,7 @@ GameInfo
                 debug_chart_color             "1"
                 directional_irradiance_sh2_dc "1"
 
-                directional_irradiance_sh2_r
-                {
-                    CompressedFormat "DXT1"
-                }
-
-                directional_irradiance_sh2_g
-                {
-                    CompressedFormat "DXT1"
-                }
-
-                directional_irradiance_sh2_b
+                directional_irradiance_sh2_lum
                 {
                     CompressedFormat "DXT1"
                 }
@@ -635,8 +633,9 @@ GameInfo
         DefaultShadowTextureWidth                   "0"          // [def: "6144"]
         DisableLateAllocatedTransformBuffer         "1"          // [def: "1"]
         DynamicShadowResolution                     "1"          // [def: "1"]
-        FogCachedShadowAtlasHeight                  "0"          // [def: "2048"]
-        FogCachedShadowAtlasWidth                   "0"          // [def: "2048"]
+        FogCachedShadowAtlasHeightTools             "0"          // [def: "2048"]
+        FogCachedShadowAtlasWidthTools              "0"          // [def: "2048"]
+        FogCachedShadowTileSizeTools                "0"          // [def: "0"]
         FogCachedShadowTileSize                     "0"          // [def: "128"]
         FrameBufferCopyFormat                       "R11G11B10F" // [def: "R11G11B10F"]
         GpuLightBinner                              "1"          // [def: "1"]
@@ -760,7 +759,7 @@ GameInfo
         //      If you would like to donate as a means of showing thanks I have a kofi.     \\
         //      https://ko-fi.com/sqooky                                                    \\
 
-        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 3.6 -------- \\
+        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 3.6.1 -------- \\
         // The github is here https://github.com/Sqooky/OptimizationLock  \\
         // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
         // The gamebanana:https://gamebanana.com/mods/656341 (it's usually behind, please check the github) \\
@@ -1185,7 +1184,7 @@ GameInfo
         fog_enableskybox         "false" // I doubt the fog commands actually are modifiable but I am maintaining their inclusion for posterity
         volume_fog_enable_jitter "false" // Don't think I can
 
-        // --------------------------------- END OF CONFIG OptimizationLock -- ver. 3.6 ------------------------------- \\
+        // --------------------------------- END OF CONFIG OptimizationLock -- ver. 3.6.1 ------------------------------- \\
 
 
         // ====================== SV commands we cannot change but I want to maintain documentation for ======================
